@@ -1,0 +1,29 @@
+name: testando_jogo
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  bonfire: ^3.17.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# Força o projeto a utilizar o Flame 1.37.0 compatível com o Bonfire 3.17.2
+dependency_overrides:
+  flame: 1.37.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/maps/
