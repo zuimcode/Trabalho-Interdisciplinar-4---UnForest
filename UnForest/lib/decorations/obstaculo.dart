@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-//teste discord
+
 
 class Obstaculo extends GameDecorationWithCollision {
   final Color cor;
