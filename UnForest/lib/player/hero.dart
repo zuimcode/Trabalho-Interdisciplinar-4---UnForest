@@ -7,11 +7,32 @@ class Heroi extends SimplePlayer {
           position: position,
           size: Vector2(32, 32),
           speed: 250,
+          animation : SimpleDirectionAnimation(
+            enabledFlipX: true,
+            idleRight: SpriteAnimation.load(
+              'player/idle.png',
+              SpriteAnimationData.sequenced(
+                amount: 4,
+                stepTime: 0.15,
+                textureSize: Vector2(32, 32),
+                texturePosition: Vector2(0, 0),
+              ),
+            ),
+            runRight: SpriteAnimation.load(
+              'player/run.png',
+              SpriteAnimationData.sequenced(
+                amount: 6,
+                stepTime: 0.15,
+                textureSize: Vector2(32, 32),
+                texturePosition: Vector2(0, 32),
+              ),
+            ),
+          )
         ) {
     // mexer nesse trem, ta dando bo
     add(RectangleHitbox(
-      size: Vector2(8, 6),
-      position: Vector2(4, 16), 
+      size: Vector2(20, 16),
+      position: Vector2(6, 16), 
     ));
   }
 

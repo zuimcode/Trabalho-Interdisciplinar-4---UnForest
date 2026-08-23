@@ -25,7 +25,6 @@ class GamePage extends StatelessWidget {
 
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('maps/mapa.json'),
-        forceTileSize: Vector2(16, 16),
         
       ),
 
@@ -34,9 +33,10 @@ class GamePage extends StatelessWidget {
         Keyboard(),
       ],
       player: Heroi(
-        position: Vector2(96, 96), 
+        position: Vector2(32 * 5, 32 * 5), 
       ),
       cameraConfig: CameraConfig(
+        moveOnlyMapArea: true,
         zoom: 1.0, 
       ),
     );
