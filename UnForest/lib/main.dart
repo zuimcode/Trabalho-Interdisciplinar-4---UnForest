@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'character_selection_page.dart';
 import 'player/hero.dart';
 
 void main() async {
@@ -10,7 +11,7 @@ void main() async {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GamePage(),
+      home: CharacterSelectionPage(), // Inicia na seleção de personagens
     ),
   );
 }
@@ -21,23 +22,20 @@ class GamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      showCollisionArea: true, //problema de sobreposicao(?)
-
+      showCollisionArea: true,
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('maps/mapa.json'),
-        
       ),
-
       playerControllers: [
         Joystick(directional: JoystickDirectional()),
         Keyboard(),
       ],
       player: Heroi(
-        position: Vector2(32 * 5, 32 * 5), 
+        position: Vector2(32 * 5, 32 * 5),
       ),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
-        zoom: 1.0, 
+        zoom: 1.0,
       ),
     );
   }
