@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class CharacterSelectionPage extends StatefulWidget {
   const CharacterSelectionPage({super.key});
@@ -9,60 +8,38 @@ class CharacterSelectionPage extends StatefulWidget {
 }
 
 class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
-  late VideoPlayerController _videoController;
+  // Guarda o personagem selecionado: null = nenhum, 'gaia' = esquerda, 'teco' = direita
   String? _selectedCharacter;
-
-  @override
-  void initState() {
-    super.initState();
-    _videoController = VideoPlayerController.asset('assets/videos/videofundo.mp4')
-      ..initialize().then((_) {
-        setState(() {});
-        _videoController.setLooping(true);
-        _videoController.setVolume(0.0);
-        _videoController.play();
-      });
-  }
-
-  @override
-  void dispose() {
-    _videoController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // 1. VÍDEO DE FUNDO EM LOOP
-          Positioned.fill(
-            child: _videoController.value.isInitialized
-                ? SizedBox.expand(
-                    child: FittedBox(
-                      fit: BoxFit.cover,
-                      child: SizedBox(
-                        width: _videoController.value.size.width,
-                        height: _videoController.value.size.height,
-                        child: VideoPlayer(_videoController),
-                      ),
-                    ),
-                  )
-                : const Center(
-                    child: CircularProgressIndicator(color: Colors.white),
-                  ),
+          // 1. FUNDO VERDE TEMPORÁRIO
+          Container(
+            color: Colors.green.shade800,
           ),
 
-          // 2. BOTÕES DE SELEÇÃO AUMENTADOS (GAIA E TECO)
+          // 2. CONTEÚDO CENTRAL (PERSONAGENS E BOTÕES DE SELEÇÃO)
           SafeArea(
             child: Row(
               children: [
-                // BOTÃO ESQUERDA (GAIA)
+                // PERSONAGEM DA ESQUERDA (GAIA)
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      const Expanded(
+                        child: Center(
+                          child: Image(
+                            image: AssetImage('assets/images/characters/jogador1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      
+                      // Botão / Indicador de Seleção da Gaia
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -73,19 +50,29 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'gaia'
                               ? 'assets/images/buttons/botão_selecionado_gaia.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 90, // <--- Aumentado de 60 para 90
+                          height: 60,
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
 
-                // BOTÃO DIREITA (TECO)
+                // PERSONAGEM DA DIREITA (TECO)
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      const Expanded(
+                        child: Center(
+                          child: Image(
+                            image: AssetImage('assets/images/characters/jogador2.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+
+                      // Botão / Indicador de Seleção do Teco
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -96,10 +83,10 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'teco'
                               ? 'assets/images/buttons/botão_selecionado_teco.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 90, // <--- Aumentado de 60 para 90
+                          height: 60,
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
@@ -107,7 +94,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
             ),
           ),
 
-          // 3. BOTÃO 'X' AUMENTADO (CANTO SUPERIOR ESQUERDO)
+          // 3. BOTÃO 'X' (CANTO SUPERIOR ESQUERDO)
           SafeArea(
             child: Align(
               alignment: Alignment.topLeft,
@@ -119,14 +106,14 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_saida_x.png',
-                    height: 60, // <--- Aumentado de 45 para 60
+                    height: 45,
                   ),
                 ),
               ),
             ),
           ),
 
-          // 4. BOTÃO CONFIGURAÇÃO AUMENTADO (CANTO SUPERIOR DIREITO)
+          // 4. BOTÃO CONFIGURAÇÃO (CANTO SUPERIOR DIREITO)
           SafeArea(
             child: Align(
               alignment: Alignment.topRight,
@@ -138,14 +125,14 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
-                    height: 60, // <--- Aumentado de 45 para 60
+                    height: 45,
                   ),
                 ),
               ),
             ),
           ),
 
-          // 5. BOTÃO CHECK AUMENTADO (CANTO INFERIOR DIREITO)
+          // 5. BOTÃO CHECK (CANTO INFERIOR DIREITO) - Aparece só quando algum personagem for selecionado
           if (_selectedCharacter != null)
             SafeArea(
               child: Align(
@@ -154,11 +141,11 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
                     onTap: () {
-                      // Ação de confirmação
+                      // Ação ao confirmar a seleção e ir para a próxima página
                     },
                     child: Image.asset(
                       'assets/images/buttons/botão_check.png',
-                      height: 75, // <--- Aumentado de 55 para 75
+                      height: 55,
                     ),
                   ),
                 ),
