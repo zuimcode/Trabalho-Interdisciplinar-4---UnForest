@@ -4,7 +4,7 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
   Heroi({required super.position})
       : super(
           size: Vector2(64, 64),
-          speed: 100,
+          speed: 120,
           animation: SimpleDirectionAnimation(
             enabledFlipX: true,
             idleRight: SpriteAnimation.load(
@@ -32,8 +32,8 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
   Future<void> onLoad() {
     add(
       RectangleHitbox(
-        size: Vector2(40, 40),
-        position: Vector2(20, 36),
+        size: Vector2(30, 50),
+        position: Vector2(15, 15),
         isSolid: true,             
       ),
     );

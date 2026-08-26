@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="18">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="22">
  <editorsettings>
-  <export format="json"/>
+  <export target="Images/maps/mapa.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="Tilesets and props Demo" tilewidth="32" tileheight="32" tilecount="546" columns="26">
   <image source="TilesSet/EPIC RPG World Pack Grass/Tilesets and props/Tilesets and props Demo.png" width="832" height="672"/>
@@ -598,6 +598,43 @@
    </wangset>
   </wangsets>
  </tileset>
+ <tileset firstgid="4143" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Animated water tiles.tsx"/>
+ <tileset firstgid="4879" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Animated water tiles-transp.tsx"/>
+ <tileset firstgid="5615" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Atlas-Props.tsx"/>
+ <tileset firstgid="8267" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Atlas-Props-Sprites.tsx"/>
+ <tileset firstgid="10467" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Grass Land - tileset-cliff.tsx"/>
+ <tileset firstgid="10707" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Grass Land - tileset-transp-cliff.tsx"/>
+ <tileset firstgid="10947" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grass Land/TiledMap Editor/tilesets/Terrain.tsx"/>
+ <tileset firstgid="13485" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet1.tsx"/>
+ <tileset firstgid="17005" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet1-sprites.tsx"/>
+ <tileset firstgid="17644" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet2.tsx"/>
+ <tileset firstgid="21164" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet2-sprites.tsx"/>
+ <tileset firstgid="21461" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet3.tsx"/>
+ <tileset firstgid="22605" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-props-sheet3-sprites.tsx"/>
+ <tileset firstgid="22799" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet4.tsx"/>
+ <tileset firstgid="23411" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Atlas-Props-sheet4-sprites.tsx"/>
+ <tileset firstgid="23733" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/beach - no thick foam.tsx"/>
+ <tileset firstgid="24243" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/beach - with thick foam.tsx"/>
+ <tileset firstgid="24753" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Beach-transition tiles between coast platform and beach.tsx"/>
+ <tileset firstgid="25013" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/fence-curved.tsx"/>
+ <tileset firstgid="25061" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/fence-straight.tsx"/>
+ <tileset firstgid="25109" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/fertilized soil.tsx"/>
+ <tileset firstgid="25277" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/gl2-Tileset - wall 1-3tiles.tsx"/>
+ <tileset firstgid="25533" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/gl2-Tileset - wall 1-3tiles-transp.tsx"/>
+ <tileset firstgid="25789" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/hole1.tsx"/>
+ <tileset firstgid="26029" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/hole2.tsx"/>
+ <tileset firstgid="26269" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/hole3.tsx"/>
+ <tileset firstgid="26509" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - grass - coast.tsx"/>
+ <tileset firstgid="27495" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - grass to water.tsx"/>
+ <tileset firstgid="28365" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - grass(transparency) - coast.tsx"/>
+ <tileset firstgid="29351" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - grass(transparency) to water.tsx"/>
+ <tileset firstgid="30221" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - water to grass - river orientation.tsx"/>
+ <tileset firstgid="31091" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/platform - water to grass(transparency) - river orientation.tsx"/>
+ <tileset firstgid="31961" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/test.tsx"/>
+ <tileset firstgid="31980" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Tileset - wall1 - transparency.tsx"/>
+ <tileset firstgid="32220" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Tileset - wall1.tsx"/>
+ <tileset firstgid="32460" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Tileset-Terrain-new grass - transparency.tsx"/>
+ <tileset firstgid="36420" source="../../../../Tudo Aqui/RafaelMatos/RafaelMatos/ERW-Grassland 2.0/TiledMap Editor/Tilesets/Tileset-Terrain-new grass.tsx"/>
  <layer id="1" name="base grass" width="75" height="75" locked="1">
   <data encoding="csv">
 42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,42,43,41,
@@ -1400,5 +1437,5 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="12" name="Teste"/>
+ <objectgroup id="13" name="Camada de Objetos 1"/>
 </map>
