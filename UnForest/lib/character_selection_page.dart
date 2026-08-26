@@ -73,7 +73,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'gaia'
                               ? 'assets/images/buttons/botão_selecionado_gaia.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 90, // <--- Aumentado de 60 para 90
+                          height: 120, 
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -96,7 +96,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'teco'
                               ? 'assets/images/buttons/botão_selecionado_teco.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 90, // <--- Aumentado de 60 para 90
+                          height: 120, 
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -119,7 +119,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_saida_x.png',
-                    height: 60, // <--- Aumentado de 45 para 60
+                    height: 120, 
                   ),
                 ),
               ),
@@ -138,7 +138,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
-                    height: 60, // <--- Aumentado de 45 para 60
+                    height: 120, 
                   ),
                 ),
               ),
@@ -158,7 +158,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                     },
                     child: Image.asset(
                       'assets/images/buttons/botão_check.png',
-                      height: 75, // <--- Aumentado de 55 para 75
+                      height: 120, 
                     ),
                   ),
                 ),
