@@ -54,7 +54,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   ),
           ),
 
-          // 2. BOTÕES DE SELEÇÃO AUMENTADOS (GAIA E TECO)
+          // 2. BOTÕES DE SELEÇÃO (GAIA E TECO)
           SafeArea(
             child: Row(
               children: [
@@ -73,7 +73,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'gaia'
                               ? 'assets/images/buttons/botão_selecionado_gaia.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 120, 
+                          height: 120,
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -96,7 +96,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'teco'
                               ? 'assets/images/buttons/botão_selecionado_teco.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 120, 
+                          height: 120,
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -107,7 +107,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
             ),
           ),
 
-          // 3. BOTÃO 'X' AUMENTADO (CANTO SUPERIOR ESQUERDO)
+          // 3. BOTÃO 'X' (CANTO SUPERIOR ESQUERDO)
           SafeArea(
             child: Align(
               alignment: Alignment.topLeft,
@@ -119,14 +119,14 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_saida_x.png',
-                    height: 120, 
+                    height: 120,
                   ),
                 ),
               ),
             ),
           ),
 
-          // 4. BOTÃO CONFIGURAÇÃO AUMENTADO (CANTO SUPERIOR DIREITO)
+          // 4. BOTÃO CONFIGURAÇÃO (CANTO SUPERIOR DIREITO)
           SafeArea(
             child: Align(
               alignment: Alignment.topRight,
@@ -134,18 +134,18 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                 padding: const EdgeInsets.all(16.0),
                 child: GestureDetector(
                   onTap: () {
-                    // Ação de configurações
+                    Navigator.of(context).pushNamed('/settings');
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
-                    height: 120, 
+                    height: 120,
                   ),
                 ),
               ),
             ),
           ),
 
-          // 5. BOTÃO CHECK AUMENTADO (CANTO INFERIOR DIREITO)
+          // 5. BOTÃO CHECK (CANTO INFERIOR DIREITO)
           if (_selectedCharacter != null)
             SafeArea(
               child: Align(
@@ -154,11 +154,14 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
                     onTap: () {
-                      // Ação de confirmação
+                      Navigator.of(context).pushReplacementNamed(
+                        '/game',
+                        arguments: _selectedCharacter,
+                      );
                     },
                     child: Image.asset(
                       'assets/images/buttons/botão_check.png',
-                      height: 120, 
+                      height: 120,
                     ),
                   ),
                 ),

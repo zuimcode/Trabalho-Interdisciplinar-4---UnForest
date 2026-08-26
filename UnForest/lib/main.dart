@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'character_selection_page.dart';
+import 'settings_page.dart'; // Import da tela de configurações
 import 'player/hero.dart';
 
 void main() async {
@@ -9,10 +10,16 @@ void main() async {
   await Flame.device.fullScreen();
 
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CharacterSelectionPage(), // Inicia na seleção de personagens
-      //home: GamePage(),
+      home: const CharacterSelectionPage(), // Tela inicial
+      
+      // Definição das rotas nomeadas
+      routes: {
+        '/settings': (context) => const SettingsPage(),
+        '/character_selection': (context) => const CharacterSelectionPage(),
+        '/game': (context) => const GamePage(),
+      },
     ),
   );
 }
