@@ -12,6 +12,7 @@ void main() async {
     const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CharacterSelectionPage(), // Inicia na seleção de personagens
+      //home: GamePage(),
     ),
   );
 }

@@ -1,10 +1,10 @@
 import 'package:bonfire/bonfire.dart';
 
-class Heroi extends SimplePlayer {
+class Heroi extends SimplePlayer with BlockMovementCollision {
   Heroi({required super.position})
       : super(
           size: Vector2(64, 64),
-          speed: 250,
+          speed: 100,
           animation: SimpleDirectionAnimation(
             enabledFlipX: true,
             idleRight: SpriteAnimation.load(
@@ -32,8 +32,9 @@ class Heroi extends SimplePlayer {
   Future<void> onLoad() {
     add(
       RectangleHitbox(
-        size: Vector2(20, 16),
-        position: Vector2(6, 16),
+        size: Vector2(40, 40),
+        position: Vector2(20, 36),
+        isSolid: true,             
       ),
     );
     return super.onLoad();
