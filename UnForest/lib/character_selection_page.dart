@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:video_player/video_player.dart';
-import 'settings_page.dart'; // Importa a função showSettingsDialog
+import 'settings_page.dart';
+import 'game/game_page.dart';
 
 class CharacterSelectionPage extends StatefulWidget {
   const CharacterSelectionPage({super.key});
@@ -11,14 +13,14 @@ class CharacterSelectionPage extends StatefulWidget {
 
 class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
   late VideoPlayerController _videoController;
-  String? _selectedCharacter;
+  String? _selectedCharacter; // Guarda o personagem selecionado no momento
 
   @override
   void initState() {
     super.initState();
     _videoController = VideoPlayerController.asset('assets/videos/videofundo.mp4')
       ..initialize().then((_) {
-        setState(() {});
+        if (mounted) setState(() {});
         _videoController.setLooping(true);
         _videoController.setVolume(0.0);
         _videoController.play();
@@ -29,6 +31,24 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
   void dispose() {
     _videoController.dispose();
     super.dispose();
+  }
+
+  // Executado SOMENTE quando o usuário clica no botão de CHECK
+  Future<void> _confirmSelectionAndNavigate() async {
+    if (_selectedCharacter == null) return;
+
+    // 1. Salva a variável no local storage apenas neste momento
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('is_character', _selectedCharacter!); //string gaia ou teco
+
+    if (!mounted) return;
+
+    // 2. Transiciona para a GamePage
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const GamePage(),
+      ),
+    );
   }
 
   @override
@@ -66,6 +86,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          // Apenas troca o estado local (permite alternar)
                           setState(() {
                             _selectedCharacter = 'gaia';
                           });
@@ -89,6 +110,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          // Apenas troca o estado local (permite alternar)
                           setState(() {
                             _selectedCharacter = 'teco';
                           });
@@ -115,9 +137,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
+                  onTap: () => Navigator.of(context).pop(),
                   child: Image.asset(
                     'assets/images/buttons/botão_saida_x.png',
                     height: 100,
@@ -134,9 +154,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: GestureDetector(
-                  onTap: () {
-                    showSettingsDialog(context); // Chama o Pop-Up modal
-                  },
+                  onTap: () => showSettingsDialog(context),
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
                     height: 100,
@@ -146,7 +164,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
             ),
           ),
 
-          // 5. BOTÃO CHECK (CENTRO INFERIOR)
+          // 5. BOTÃO CHECK (SÓ APARECE SE UM PERSONAGEM FOR SELECIONADO)
           if (_selectedCharacter != null)
             SafeArea(
               child: Align(
@@ -154,12 +172,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushReplacementNamed(
-                        '/game',
-                        arguments: _selectedCharacter,
-                      );
-                    },
+                    onTap: _confirmSelectionAndNavigate,
                     child: Image.asset(
                       'assets/images/buttons/botão_check.png',
                       height: 50,

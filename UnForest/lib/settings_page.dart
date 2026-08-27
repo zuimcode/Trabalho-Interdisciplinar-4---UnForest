@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 enum AudioCategory { music, sfx, dialogue }
 
@@ -7,7 +8,7 @@ Future<void> showSettingsDialog(BuildContext context) {
   return showDialog(
     context: context,
     barrierDismissible: true,
-    barrierColor: Colors.black54,
+    //barrierColor: Colors.black70,
     builder: (context) => const SettingsDialog(),
   );
 }
@@ -20,7 +21,8 @@ class SettingsDialog extends StatefulWidget {
 }
 
 class _SettingsDialogState extends State<SettingsDialog> {
-  AudioCategory? _activeCategory;
+  // Define 'music' como ativa inicialmente
+  AudioCategory? _activeCategory = AudioCategory.music;
   bool _isMuted = false;
 
   double _musicVolume = 0.8;
@@ -71,113 +73,136 @@ class _SettingsDialogState extends State<SettingsDialog> {
 
     return Dialog(
       backgroundColor: Colors.transparent,
-      insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Container(
-        width: screenSize.width * 0.7,
-        constraints: const BoxConstraints(maxWidth: 550, maxHeight: 380),
-        padding: const EdgeInsets.all(20),
+        width: screenSize.width * 0.85,
+        constraints: const BoxConstraints(maxWidth: 500, maxHeight: 400),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
         decoration: BoxDecoration(
-          color: const Color(0xFF1E231B),
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: const Color(0xFF5A7232), width: 3),
-          boxShadow: const [
+          // Fundo tom pergaminho/mapa antigo
+          color: const Color(0xFFD9C5A0),
+          borderRadius: BorderRadius.circular(20),
+          // Borda dupla em couro/madeira antiga
+          border: Border.all(color: const Color(0xFF4A3525), width: 5),
+          boxShadow: [
             BoxShadow(
-              blurRadius: 15,
-              offset: Offset(0, 8),
+              color: Colors.black.withOpacity(0.6),
+              blurRadius: 18,
+              spreadRadius: 2,
+              offset: const Offset(0, 8),
             ),
           ],
         ),
         child: Stack(
           children: [
-            Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _buildCategoryButton(
-                          assetPath: 'assets/images/buttons/botão_seleção_música.png',
-                          category: AudioCategory.music,
-                        ),
-                        const SizedBox(width: 12),
-                        _buildCategoryButton(
-                          assetPath: 'assets/images/buttons/botão_seleção_efeitos_sonoros.png',
-                          category: AudioCategory.sfx,
-                        ),
-                        const SizedBox(width: 12),
-                        _buildCategoryButton(
-                          assetPath: 'assets/images/buttons/botão_seleção_diálogo.png',
-                          category: AudioCategory.dialogue,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    if (_activeCategory != null) ...[
-                      SizedBox(
-                        width: 260,
-                        height: 50,
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            final double sliderWidth = constraints.maxWidth;
-                            const double leafSize = 40.0;
-                            final double leafPosition = (sliderWidth - leafSize) * activeVolume;
+            // CONTEÚDO PRINCIPAL
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 8),
 
-                            return Stack(
-                              alignment: Alignment.centerLeft,
-                              children: [
-                                Center(
-                                  child: Image.asset(
-                                    'assets/images/buttons/botão_volume.png',
-                                    width: sliderWidth,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                                Positioned(
-                                  left: leafPosition,
-                                  child: Image.asset(
-                                    'assets/images/buttons/botão_volume_folha.png',
-                                    width: leafSize,
-                                    height: leafSize,
-                                  ),
-                                ),
-                                SliderTheme(
-                                  data: SliderTheme.of(context).copyWith(
-                                    trackShape: const RectangularSliderTrackShape(),
-                                    activeTrackColor: Colors.transparent,
-                                    inactiveTrackColor: Colors.transparent,
-                                    thumbColor: Colors.transparent,
-                                    overlayColor: Colors.transparent,
-                                  ),
-                                  child: Slider(
-                                    value: activeVolume,
-                                    min: 0.0,
-                                    max: 1.0,
-                                    onChanged: _isMuted ? null : _updateVolume,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        ),
-                      ),
-                      const SizedBox(height: 15),
-                    ],
-                    GestureDetector(
-                      onTap: _toggleMute,
-                      child: Image.asset(
-                        _isMuted
-                            ? 'assets/images/buttons/botão_seleção_volume_mutado.png'
-                            : 'assets/images/buttons/botão_seleção_volume_desmutado.png',
-                        height: 50,
-                      ),
+                // TÍTULO MAPA ANTIGO (SEM CORES VIVAS)
+                _buildAncientMapTitle('CONFIGURAÇÕES'),
+
+                const SizedBox(height: 28),
+
+                // CATEGORIAS DE ÁUDIO (SELEÇÃO APENAS MUDANDO O TAMANHO)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildCategoryButton(
+                      assetPath: 'assets/images/buttons/botão_seleção_música.png',
+                      category: AudioCategory.music,
+                    ),
+                    const SizedBox(width: 20),
+                    _buildCategoryButton(
+                      assetPath: 'assets/images/buttons/botão_seleção_efeitos_sonoros.png',
+                      category: AudioCategory.sfx,
+                    ),
+                    const SizedBox(width: 20),
+                    _buildCategoryButton(
+                      assetPath: 'assets/images/buttons/botão_seleção_diálogo.png',
+                      category: AudioCategory.dialogue,
                     ),
                   ],
                 ),
-              ),
+
+                const SizedBox(height: 24),
+
+                // SLIDER PERSONALIZADO DE VOLUME
+                if (_activeCategory != null) ...[
+                  SizedBox(
+                    width: 260,
+                    height: 50,
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final double sliderWidth = constraints.maxWidth;
+                        const double leafSize = 40.0;
+                        final double leafPosition = (sliderWidth - leafSize) * activeVolume;
+
+                        return Stack(
+                          alignment: Alignment.centerLeft,
+                          children: [
+                            Center(
+                              child: Image.asset(
+                                'assets/images/buttons/botão_volume.png',
+                                width: sliderWidth,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            Positioned(
+                              left: leafPosition,
+                              child: AnimatedOpacity(
+                                duration: const Duration(milliseconds: 150),
+                                opacity: _isMuted ? 0.4 : 1.0,
+                                child: Image.asset(
+                                  'assets/images/buttons/botão_volume_folha.png',
+                                  width: leafSize,
+                                  height: leafSize,
+                                ),
+                              ),
+                            ),
+                            SliderTheme(
+                              data: SliderTheme.of(context).copyWith(
+                                trackShape: const RectangularSliderTrackShape(),
+                                activeTrackColor: Colors.transparent,
+                                inactiveTrackColor: Colors.transparent,
+                                thumbColor: Colors.transparent,
+                                overlayColor: Colors.transparent,
+                              ),
+                              child: Slider(
+                                value: activeVolume,
+                                min: 0.0,
+                                max: 1.0,
+                                onChanged: _isMuted ? null : _updateVolume,
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                // BOTÃO DE MUTE/DESMUTE
+                GestureDetector(
+                  onTap: _toggleMute,
+                  child: AnimatedScale(
+                    scale: _isMuted ? 0.9 : 1.0,
+                    duration: const Duration(milliseconds: 150),
+                    child: Image.asset(
+                      _isMuted
+                          ? 'assets/images/buttons/botão_seleção_volume_mutado.png'
+                          : 'assets/images/buttons/botão_seleção_volume_desmutado.png',
+                      height: 48,
+                    ),
+                  ),
+                ),
+              ],
             ),
+
+            // BOTÃO DE FECHAR 'X' NO CANTO SUPERIOR ESQUERDO
             Positioned(
               top: 0,
               left: 0,
@@ -185,7 +210,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
                 onTap: () => Navigator.of(context).pop(),
                 child: Image.asset(
                   'assets/images/buttons/botão_saida_x.png',
-                  height: 45,
+                  height: 40,
                 ),
               ),
             ),
@@ -195,6 +220,28 @@ class _SettingsDialogState extends State<SettingsDialog> {
     );
   }
 
+  // Título com estilo rústico de pergaminho/mapa antigo (Cinzel/Tinos)
+  Widget _buildAncientMapTitle(String title) {
+    return Text(
+      title,
+      textAlign: TextAlign.center,
+      style: GoogleFonts.cinzel(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 3.0,
+        color: const Color(0xFF2C1D11), // Castanho escuro estilo tinta antiga
+        shadows: const [
+          Shadow(
+            offset: Offset(0, 1),
+            blurRadius: 1,
+            color: Color(0x40000000),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Botão limpo: selecionado fica maior (scale 1.25) e não selecionado fica menor (scale 0.85)
   Widget _buildCategoryButton({
     required String assetPath,
     required AudioCategory category,
@@ -207,16 +254,17 @@ class _SettingsDialogState extends State<SettingsDialog> {
           _activeCategory = isSelected ? null : category;
         });
       },
-      child: Container(
-        decoration: isSelected
-            ? BoxDecoration(
-                border: Border.all(color: Colors.amber, width: 3),
-                borderRadius: BorderRadius.circular(10),
-              )
-            : null,
-        child: Image.asset(
-          assetPath,
-          height: 50,
+      child: AnimatedScale(
+        scale: isSelected ? 1.25 : 0.85,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOutBack,
+        child: AnimatedOpacity(
+          duration: const Duration(milliseconds: 200),
+          opacity: isSelected ? 1.0 : 0.6,
+          child: Image.asset(
+            assetPath,
+            height: 52,
+          ),
         ),
       ),
     );
