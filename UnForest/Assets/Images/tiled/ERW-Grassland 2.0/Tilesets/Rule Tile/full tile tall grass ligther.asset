@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: full tile tall grass ligther
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 1029378823, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 1029378823, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 556558328, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 879280721, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 220355525, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 526931590, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -789438370, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -1112017975, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 412112322, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -817780244, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -874184727, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -391055875, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -708039649, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -73619455, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 1903975366, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 793767704, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 478467885, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -1578587247, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -228969265, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -274623350, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 2053376895, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -1636083288, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 740019036, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -1387875662, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -204323284, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -1836933809, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 965319396, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 343336008, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 403626517, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -119016536, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 931000782, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -571589684, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 621888803, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 1513987797, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: -658565123, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    - {fileID: 2120935460, guid: 829cdb12c01ffbe4d9dcb67bb1a65853, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.9
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions:
+    - {x: -1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    m_RuleTransform: 0

@@ -1,0 +1,2423 @@
+fileFormatVersion: 2
+guid: 98fa593358cb71d49afc0bf6e8c3646c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea060ce853891c4ba5594d5f65f1f9e
+      internalID: 1203870698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0469db51765fcee47ba631c80a077501
+      internalID: -1154085124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07220df907151d44193c48a58a0c0fba
+      internalID: 1754566965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c379acf4fb7c043b37ebe7a644b923
+      internalID: -1327235720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ead443536d56a4395c5363c5a02918
+      internalID: 800714187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85c75a44e4e8e34ead690a51e724457
+      internalID: 1409320287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad54271b08b94974baa47f6101858a44
+      internalID: 798634845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adfbbf768262c54b8db9618da9df271
+      internalID: -1252518348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af4e526335bd4549aea63e7f338208b
+      internalID: -1386829416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_9
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce7becfbe124f74aa54f957e56ff741
+      internalID: -1997472082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_10
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f7d979b664fc541beb5454c6adf955
+      internalID: -1255840500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_11
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9880c1b40a8ad7641be841205f66eb64
+      internalID: 900005269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_12
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcf56c0047557447a703ba64872cdbb
+      internalID: 300847753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_13
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c42956060a70341af4999b77f5cb2f
+      internalID: 1291690389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_14
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb60c7e260a341848b5b0a67bd822ef7
+      internalID: 990323299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_15
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 576
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367cf266173749046937d2daab6c8c6c
+      internalID: -1475145614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f196056f9ff28f245a800dc42ac517ee
+      internalID: 199982777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0597bfeb15803d94e9a5618a9898df72
+      internalID: -379072962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f634a6787bab141bad131ee725950d
+      internalID: -443679885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e272a98024d734c4fa22190cc05da392
+      internalID: 43281443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecbc7b77b3b5ca4a8e1aba161447e48
+      internalID: 884227616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca9c8079cfabc049a1b8fd59ab57f2f
+      internalID: -1057088432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_22
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac047de2a222bf4b809b09d85f22168
+      internalID: -1932494259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_23
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 480
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4a6a7f53d790045b3751ca8f9169d7
+      internalID: -60689775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d17613e7b1b663418fb4be16bf4cb42
+      internalID: -407247301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5faee547d52b0e140a9a478faaebea7e
+      internalID: 477487558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6b4bbc0fa93594990d2f395f0c60f0
+      internalID: 1378689898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741d2485182abbd43beb6bc3bfcd3f77
+      internalID: -1057361002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3003db3430a12764395aea783f552acc
+      internalID: 1595499624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_29
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf35e90ea19325448d5452f12b0440d
+      internalID: 7386441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_30
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568556f6f7b00a242bcac741b6df3428
+      internalID: 234547215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_31
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f97448922850b488fa9e0d4e171f92
+      internalID: 1630295261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_32
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc7f40299e8b9947bd9ad7fec99d633
+      internalID: 2003017281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_33
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acead44b9e887b44b81a303b1691f2d
+      internalID: 1812327292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_34
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1520c508bcbfd408bb243200364b76
+      internalID: -1042103574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_35
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375c8f84a8ff7104c9d78f7b9c2c2ad6
+      internalID: 408288936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_36
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d86b18fd4f1bc4490e53ef0cf96961
+      internalID: -1573609781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_37
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43626f1e417a8d7468560bc321d26b85
+      internalID: 1074531308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_38
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2503de86af17ef44fae23ad00807b83a
+      internalID: 1602354995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_39
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed26e0ad49137c44a8f194f12fd9b36
+      internalID: -404712405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_40
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df91b188650acf8478cf11ce69ed9fd5
+      internalID: -784661150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_41
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f8911e1dbe0c348a48ce5bcffce66b
+      internalID: -1818081753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_42
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37567ac2a69061a42b55dd70cb21ac33
+      internalID: -576311021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_43
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6347b8aa723b84381731796f284faf
+      internalID: 441966899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_44
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3073ba428677246b9f39f003668192
+      internalID: -658402580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_45
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 384
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebe24309a6cee2499c0b5cb36ee1ccb
+      internalID: -813589526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ba89a9bea676a4abe056c3b9771b97
+      internalID: 1376478314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_47
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb71bbe1a232a4c408891209d758692a
+      internalID: -2119704981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_48
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ab1ada433a66844919647bad72b3ac
+      internalID: 1807664975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_49
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d0d4c58c6a6ea45b3f003b89b4b5a7
+      internalID: -1821000882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_50
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2692bb1b97aab64aa23a48922335c39
+      internalID: -1218536031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_51
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40ee1c1bcd82ac4394ded97bb862566
+      internalID: -952522091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_52
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb5607c92b9b7f4e8c3f22181d85e8f
+      internalID: -562663758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_53
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906e3289d50625a4a9d515aee5250033
+      internalID: 1183994804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_54
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9323c597207b97e47a6f57a2eedd745a
+      internalID: 390800514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_55
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29b34e11069e4a43a49568399a0a8f0
+      internalID: -737067242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_56
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 288
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6becba9d3fce54aba8499946738de1
+      internalID: -468248373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4698cf626319d764b8db1ca90299faa3
+      internalID: -350777635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_58
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff18b15aa7dcc7448c529fbe6ae0349
+      internalID: -1537585281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_59
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8a4c536e200134cad3d7af3531ae28
+      internalID: -327005315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_60
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b89b4c7fa111dc4ca3619f2a0a82ba9
+      internalID: 2124673832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_61
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e620f8b2459524eb0c41df5df9d126
+      internalID: 1537511370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_62
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c666bda1d6837543977fe07c2736d51
+      internalID: -926356122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_63
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a32fb49d78626146b6061c361c07ad3
+      internalID: -834591141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_64
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d343a6f174e53345a1bd0db9c506265
+      internalID: -1790432692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_65
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f2de482a3568b47b8f0ecc3a3f777e
+      internalID: -1775882461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_66
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9066b544f16b04d8f0847ff4a1edc4
+      internalID: -1666622983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_67
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b68dfd3b1a60054db52bd1cedadaf79
+      internalID: -1876030274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_68
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0efd80988d75f4f8acaaa257b31b7f
+      internalID: -804671793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_69
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330c0102665d7054fa0080eca4b0ab9b
+      internalID: -448191456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_70
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f0053e3a0cb984abacf2644d2018f8
+      internalID: 689167331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_71
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040c2c5b06e8de446b850539726f4627
+      internalID: -1403704775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_72
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 192
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74b68d0913ee89499615c120f402b25
+      internalID: 1028898450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c91a47b4fcc0a44b90fd3cd96b27277
+      internalID: 953624192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_74
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3c8f1d8d7e8ef499cd36bfaefcbf36
+      internalID: 1989762265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_75
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6e53768a69b8849a68e1445eed2d48
+      internalID: 1523415938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_76
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c8eae2dddcc1b459906a96bad6400e
+      internalID: -305144197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_77
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9311d8c5161994898d91c1baa83a1b
+      internalID: 111284611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_78
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed95f978708a0347bc7136d10fe0494
+      internalID: 1817942344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_79
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4f8e2d3128b7646a032fdd0b5a1e63
+      internalID: 1996601282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_80
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 96
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1cf45190bcd2c4681d7a91235c9f5c
+      internalID: 1104566095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e425d5a60535d42afed2b33f560d98
+      internalID: -513382148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c112a99f223a4d4418a5d255db5c08aa
+      internalID: 1974699062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_83
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf009f2fc590ffe4ea95b172f195c107
+      internalID: -1200397686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_84
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ce54a2f3af1334ebddb2995064b4ca
+      internalID: -420988123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_85
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a1386913a807b4a8ead5b535d797d5
+      internalID: 1685190209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_86
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da3e3d1a0240dc4086d4af1296607ad
+      internalID: 1862668405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_87
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617df06cd1c82204a9a7bde9866a203c
+      internalID: -1392612367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_88
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0e62a89fb494142bc1843ec6989afb
+      internalID: -1542110619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_89
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3305046d7ec5f4c9f814af4d63bde2
+      internalID: -288681699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_90
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f315c0fccbb0c4fadebb54ed67f2f8
+      internalID: -1744331221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_91
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8158cf8bc7cd45408c9b7181718fc23
+      internalID: -1243685900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_92
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae109caa0427f934da57b75428fb0685
+      internalID: -2075221847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_93
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa844e36ac79159488105f74e85fee39
+      internalID: 376380407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_94
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07a07425013ffc4281022c3f4c76619
+      internalID: 776694249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_95
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1e2ee8ea6098347ae6f3befc1e388b
+      internalID: 1587944939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_96
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7686e72ad533c4e4486c66e16e3f7901
+      internalID: 1534305476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_97
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea83f35660af96345a70d1842471fe58
+      internalID: 1485794163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_98
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630c2a51286c48145995fb025c824c2d
+      internalID: 148164736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior-all-animations-from top to bottom(Idle-run-full combo attack
+        with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_99
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 144
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfea208295b1de40aa8f3968f132d53
+      internalID: 657936894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_0: 1203870698
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_1: -1154085124
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_10: -1255840500
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_11: 900005269
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_12: 300847753
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_13: 1291690389
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_14: 990323299
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_15: -1475145614
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_16: 199982777
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_17: -379072962
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_18: -443679885
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_19: 43281443
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_2: 1754566965
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_20: 884227616
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_21: -1057088432
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_22: -1932494259
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_23: -60689775
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_24: -407247301
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_25: 477487558
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_26: 1378689898
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_27: -1057361002
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_28: 1595499624
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_29: 7386441
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_3: -1327235720
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_30: 234547215
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_31: 1630295261
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_32: 2003017281
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_33: 1812327292
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_34: -1042103574
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_35: 408288936
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_36: -1573609781
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_37: 1074531308
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_38: 1602354995
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_39: -404712405
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_4: 800714187
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_40: -784661150
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_41: -1818081753
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_42: -576311021
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_43: 441966899
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_44: -658402580
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_45: -813589526
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_46: 1376478314
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_47: -2119704981
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_48: 1807664975
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_49: -1821000882
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_5: 1409320287
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_50: -1218536031
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_51: -952522091
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_52: -562663758
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_53: 1183994804
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_54: 390800514
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_55: -737067242
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_56: -468248373
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_57: -350777635
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_58: -1537585281
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_59: -327005315
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_6: 798634845
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_60: 2124673832
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_61: 1537511370
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_62: -926356122
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_63: -834591141
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_64: -1790432692
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_65: -1775882461
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_66: -1666622983
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_67: -1876030274
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_68: -804671793
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_69: -448191456
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_7: -1252518348
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_70: 689167331
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_71: -1403704775
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_72: 1028898450
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_73: 953624192
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_74: 1989762265
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_75: 1523415938
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_76: -305144197
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_77: 111284611
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_78: 1817942344
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_79: 1996601282
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_8: -1386829416
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_80: 1104566095
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_81: -513382148
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_82: 1974699062
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_83: -1200397686
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_84: -420988123
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_85: 1685190209
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_86: 1862668405
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_87: -1392612367
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_88: -1542110619
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_89: -288681699
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_9: -1997472082
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_90: -1744331221
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_91: -1243685900
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_92: -2075221847
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_93: 376380407
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_94: 776694249
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_95: 1587944939
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_96: 1534305476
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_97: 1485794163
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_98: 148164736
+      warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96_99: 657936894
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

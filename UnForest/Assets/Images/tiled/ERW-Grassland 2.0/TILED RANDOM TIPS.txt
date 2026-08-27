@@ -1,0 +1,43 @@
+Object layers and props
+- When working with object layers you place them freely without the tile grid constraint (press Control to snap its position to tile grid before placing it on the map.
+
+- If you want to place props as sprites, use object layer instead. Then you must grab this sprite from a special "tileset"(.tsx).
+This special .tsx is a collection of images. If this special .tsx type is not yet provided by me, you can create it yourself. Click
+"create tileset" and in the Type combobox bellow the Name field, select "collection of images". Now that you created this
+collection of images, select the "+" button in the tool bar on the top and select all sprites (shift+click to select multiple sprites).
+While you are still in the .tsx that you created, If you're trying to select these images you gonna notice that the left mouse button doesn't work. Use the
+right mouse button instead. You can't select multiple sprites at once too after imported them but you can reimport individual sprites. Select the image and look for
+the tileset properties to change it.
+It's weird I know XD but it works
+
+- Press T or select "insert tile" in the top tool bar to place the props in the object layer.
+
+- If you just want to place small props that are within the tile unit size (e.g 32x32) and you don't need place them freely, it's preferable that
+you use the normal tileset and place these tiles in a tile layer because you have more options to work with tiles since this is the main focus of this software.
+
+- When working with objects, you have the advantage to have an auto z-sort while placing or moving props in the Tiled Editor
+
+
+Bear in mind that I still recomend to place most sprites directly in your game engine. However, you can still do it in Tiled with no problem.
+
+
+
+
+Auto-tile
+-Rules are per layer which means the autotile/automapping only works if you draw in a specific layer. You can open the rule files and see
+what layer name is being used for a particular autotile (e.g wall-1). You can also open the example maps to quickly see all the layer names.
+
+
+Misc
+- Tile Stamp
+You can select multiple tiles and create a tile stamp. This way you can create custom brushes. If this window is not opened anywhere yet, then
+go to view > views and toolbars > Tile Stamps.
+
+-If you're not using any tile from a tileset in you map then you have to open this tileset manualy. Once your map have at least one tile from this tileset, It 
+will be opened automatically everytime you open your map. You can also embed the tileset into your map, and it will always be available. However
+I'm not sure if this embed tileset will be updated in case you make changes to the .png for instance.
+
+-If the tileset has transparency and you draw the part that is transparent, you can open it in any image editor paint it with 20% opacity color to actually see it while drawing
+and then remove it when you finish drawing your map. It's easy and takes a few seconds.
+
+- Press H to highlight the layer you're working on

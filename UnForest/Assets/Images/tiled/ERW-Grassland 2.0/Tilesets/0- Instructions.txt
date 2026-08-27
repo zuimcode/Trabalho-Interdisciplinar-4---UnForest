@@ -1,0 +1,28 @@
+---- Important notes ----
+
+-Unity's Rule tile system alternative
+Since Unity's default rule tile system is somehow limited and does not cover some aspects of autotiling out of the box, tilesets with multiple heights(e.g walls
+with 2 or more tiles of height) have no rule tile setup. Also, whilst animated tilesets are setup and ready to use, no tile variation is set. 
+To sum up, 90% of all tilesets are setup and ready to use.
+
+-TiledMap Editor alternative
+All tilesets have full autotile support and this is as easy as selecting a brush for a specific tileset and start drawing. 
+The rules are setup to be used with the "Automapping while drawing" deactivaded, so all you have to do is draw and, once you
+have finished, press CTRL + M or CMD + M(This is called automapping, which is the autotile version of Tiled). If you are drawing
+actual terrains(tilesets with no height), then in this case you just have to draw and no further action is needed. In this case
+you'd only use the built-in autotile(terrain brush(T))
+
+TiledMap Editor is a great and well known 2D map editor. You can create maps for your game and import it 
+to Unity using SuperTiled2Unity importer. A sample scene is provided.
+
+Hint: after importing your map to Unity, if you find some errors, especially regarding the max size of
+the tileset, try restarting Unity after fixing these issues. It might be fixed already but the error sometimes only dissapears after restarting.
+
+*My tilesets' smallest area is a 2x2 grid.
+
+links: 
+Tiled offical site: https://www.mapeditor.org/ 
+Tiled official Discord: https://discord.com/invite/39wbTv7
+SuperTiled2Unity: https://seanba.itch.io/supertiled2unity (this should be imported as a Unity package)
+
+
