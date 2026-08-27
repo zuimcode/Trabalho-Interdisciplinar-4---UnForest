@@ -8,6 +8,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:UnForest/main.dart';
+import 'package:UnForest/game/game_page.dart';
 
 void main() {
   testWidgets('Carrega a tela do jogo', (WidgetTester tester) async {
