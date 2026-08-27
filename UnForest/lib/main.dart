@@ -12,8 +12,8 @@ void main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const CharacterSelectionPage(), // Tela inicial
-      //home: const GamePage(), // Tela inicial
+      //home: const CharacterSelectionPage(), // Tela inicial
+      home: const GamePage(), // Tela inicial
       
       // Definição das rotas nomeadas do jogo
       routes: {
