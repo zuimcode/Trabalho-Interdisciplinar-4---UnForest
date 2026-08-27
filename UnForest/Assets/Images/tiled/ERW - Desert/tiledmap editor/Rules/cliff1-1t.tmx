@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="3" height="3" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="../Tilesets/Terrain-Desert.tsx"/>
+ <layer id="1" name="input_walls" width="3" height="3">
+  <data encoding="csv">
+0,0,0,
+0,450,0,
+0,0,0
+</data>
+ </layer>
+ <layer id="2" name="output_walls" width="3" height="3">
+  <data encoding="csv">
+0,0,0,
+0,408,0,
+0,0,0
+</data>
+ </layer>
+</map>
