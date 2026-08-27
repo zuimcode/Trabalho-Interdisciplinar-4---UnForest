@@ -1,7 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'character_selection_page.dart';
-import 'settings_page.dart'; // Import da tela de configurações
 import 'player/hero.dart';
 
 void main() async {
@@ -14,9 +13,8 @@ void main() async {
       debugShowCheckedModeBanner: false,
       home: const CharacterSelectionPage(), // Tela inicial
       
-      // Definição das rotas nomeadas
+      // Definição das rotas nomeadas do jogo
       routes: {
-        '/settings': (context) => const SettingsPage(),
         '/character_selection': (context) => const CharacterSelectionPage(),
         '/game': (context) => const GamePage(),
       },

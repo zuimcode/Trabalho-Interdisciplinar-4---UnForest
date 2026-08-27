@@ -149,7 +149,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
           if (_selectedCharacter != null)
             SafeArea(
               child: Align(
-                alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
@@ -161,7 +161,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                     },
                     child: Image.asset(
                       'assets/images/buttons/botão_check.png',
-                      height: 120,
+                      height: 50,
                     ),
                   ),
                 ),
