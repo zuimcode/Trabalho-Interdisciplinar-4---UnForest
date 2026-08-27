@@ -13,11 +13,12 @@ void main() async {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const CharacterSelectionPage(), // Tela inicial
+      //home: const GamePage(), // Tela inicial
       
       // Definição das rotas nomeadas do jogo
       routes: {
         '/character_selection': (context) => const CharacterSelectionPage(),
-        '/game': (context) => const GamePage(),
+        //'/game': (context) => const GamePage(),
       },
     ),
   );
