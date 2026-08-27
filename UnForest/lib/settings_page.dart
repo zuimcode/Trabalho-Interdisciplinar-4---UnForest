@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 enum AudioCategory { music, sfx, dialogue }
 
-// Função utilitária para chamar o Pop-up de Configurações de qualquer lugar
+// Função utilitária para chamar o Pop-up de Configurações
 Future<void> showSettingsDialog(BuildContext context) {
   return showDialog(
     context: context,
-    barrierDismissible: true, // Permite fechar ao tocar fora do modal
-    barrierColor: Colors.black54, // Fundo escurecido semitransparente
+    barrierDismissible: true,
+    barrierColor: Colors.black54,
     builder: (context) => const SettingsDialog(),
   );
 }
@@ -70,19 +70,18 @@ class _SettingsDialogState extends State<SettingsDialog> {
     final double activeVolume = _isMuted ? 0.0 : _currentSelectedVolume;
 
     return Dialog(
-      backgroundColor: Colors.transparent, // Fundo transparente para usar o estilo da moldura
+      backgroundColor: Colors.transparent,
       insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Container(
-        width: screenSize.width * 0.7, // Largura responsiva do Pop-up (70% da tela)
+        width: screenSize.width * 0.7,
         constraints: const BoxConstraints(maxWidth: 550, maxHeight: 380),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF1E231B), // Cor escura base com tom de floresta
+          color: const Color(0xFF1E231B),
           borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: const Color(0xFF5A7232), width: 3), // Borda estilo madeira/natureza
+          border: Border.all(color: const Color(0xFF5A7232), width: 3),
           boxShadow: const [
             BoxShadow(
-              //color: Colors.black80,
               blurRadius: 15,
               offset: Offset(0, 8),
             ),
@@ -90,21 +89,12 @@ class _SettingsDialogState extends State<SettingsDialog> {
         ),
         child: Stack(
           children: [
-            // CONTEÚDO PRINCIPAL DO POP-UP
             Center(
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: 10),
-                    // Título / Tipo de Som
-                    /*Image.asset(
-                      'assets/images/buttons/botão_seleção_tipo_som.png',
-                      height: 45,
-                    ),
-                    const SizedBox(height: 20),*/
-
-                    // BOTÕES DE CATEGORIA DE ÁUDIO
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -125,8 +115,6 @@ class _SettingsDialogState extends State<SettingsDialog> {
                       ],
                     ),
                     const SizedBox(height: 20),
-
-                    // SLIDER DA FOLHA (APARECE SE UMA CATEGORIA FOR SELECIONADA)
                     if (_activeCategory != null) ...[
                       SizedBox(
                         width: 260,
@@ -177,8 +165,6 @@ class _SettingsDialogState extends State<SettingsDialog> {
                       ),
                       const SizedBox(height: 15),
                     ],
-
-                    // BOTÃO DE MUTE / DESMUTE GLOBAL
                     GestureDetector(
                       onTap: _toggleMute,
                       child: Image.asset(
@@ -192,8 +178,6 @@ class _SettingsDialogState extends State<SettingsDialog> {
                 ),
               ),
             ),
-
-            // BOTÃO 'X' NO CANTO SUPERIOR ESQUERDO DO POP-UP
             Positioned(
               top: 0,
               left: 0,

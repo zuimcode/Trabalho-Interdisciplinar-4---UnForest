@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'settings_page.dart'; // Importa a função showSettingsDialog
 
 class CharacterSelectionPage extends StatefulWidget {
   const CharacterSelectionPage({super.key});
@@ -126,7 +127,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
             ),
           ),
 
-          // 4. BOTÃO CONFIGURAÇÃO (CANTO SUPERIOR DIREITO)
+          // 4. BOTÃO CONFIGURAÇÃO (ABRE O POP-UP)
           SafeArea(
             child: Align(
               alignment: Alignment.topRight,
@@ -134,7 +135,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                 padding: const EdgeInsets.all(16.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/settings');
+                    showSettingsDialog(context); // Chama o Pop-Up modal
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
@@ -145,7 +146,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
             ),
           ),
 
-          // 5. BOTÃO CHECK (CANTO INFERIOR DIREITO)
+          // 5. BOTÃO CHECK (CENTRO INFERIOR)
           if (_selectedCharacter != null)
             SafeArea(
               child: Align(
