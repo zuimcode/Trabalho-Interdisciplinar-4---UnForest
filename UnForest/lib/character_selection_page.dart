@@ -74,7 +74,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'gaia'
                               ? 'assets/images/buttons/botão_selecionado_gaia.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 120,
+                          height: 100,
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -97,7 +97,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                           _selectedCharacter == 'teco'
                               ? 'assets/images/buttons/botão_selecionado_teco.png'
                               : 'assets/images/buttons/botão_selecionar_mão.png',
-                          height: 120,
+                          height: 100,
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -120,7 +120,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_saida_x.png',
-                    height: 120,
+                    height: 100,
                   ),
                 ),
               ),
@@ -139,7 +139,7 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
                   },
                   child: Image.asset(
                     'assets/images/buttons/botão_configuração_engrenagem_.png',
-                    height: 120,
+                    height: 100,
                   ),
                 ),
               ),
