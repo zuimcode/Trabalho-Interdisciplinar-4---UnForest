@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-import '../player/hero.dart';
+import 'package:UnForest/player/hero.dart';
 
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
@@ -10,7 +10,7 @@ class GamePage extends StatelessWidget {
     return BonfireWidget(
       showCollisionArea: true,
       map: WorldMapByTiled(
-        WorldMapReader.fromAsset('maps/mapa.json'),
+        WorldMapReader.fromAsset('teste_mapa.json'),
       ),
       playerControllers: [
         Joystick(directional: JoystickDirectional()),

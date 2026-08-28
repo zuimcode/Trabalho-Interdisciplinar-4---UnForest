@@ -2,7 +2,7 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   a_star_algorithm:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: a_star_algorithm
       sha256: efc131ca9a3eaceebe09fa67b9a7235d6e0a6e23ff0de4c009c60d506f791349
@@ -137,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.37.0"
+  flame_lint:
+    dependency: "direct dev"
+    description:
+      name: flame_lint
+      sha256: "4f2386b49fe70a735d190e230f075abbd0c121a0bc80671cc023dfe30eee5634"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -185,7 +193,7 @@ packages:
     source: hosted
     version: "0.15.6"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "87721a4a50b19c7f1d49001e51409bddc46303966ce89a65af4f4e6004896412"
@@ -518,7 +526,7 @@ packages:
     source: hosted
     version: "0.7.12"
   tiledjsonreader:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: tiledjsonreader
       sha256: ca987348c2d82d2806311c137cc77bf9f83d2517697ee19d0d7a7b01531375b1

@@ -15,11 +15,15 @@ dependencies:
   video_player: ^2.8.2
   shared_preferences: ^2.2.2
   google_fonts: ^6.1.0
+  a_star_algorithm: ^0.4.1
+  http: ^1.2.2
+  tiledjsonreader: ^1.4.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flame_lint: ^1.2.1
 
 # Força o projeto a utilizar o Flame 1.37.0 compatível com o Bonfire 3.17.2
 dependency_overrides:
@@ -29,17 +33,12 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/images/maps/
     - assets/images/tiled/ERW-Grassland 2.0/Props/Static props/
     - assets/images/tiled/ERW-Grassland 2.0/Props/Static props/sheet1-sprites/
     - assets/images/tiled/ERW-Grassland 2.0/Props/Static props/sheet2-sprites/
-    - assets/images/tiled/ERW-Grassland 2.0/Props/Static props/sheet3-sprites/
-    - assets/images/tiled/ERW-Grass Land/Props/Atlas-Props-individual sprites/
-    - assets/images/tiled/ERW-Grass Land/Props/
-    - assets/images/tiled/ERW-Grass Land/Tilesets/
-    - assets/images/tiled/ERW-Grassland 2.0/Tilesets/Platform-grass to water/
     - assets/images/tiled/ERW-Grassland 2.0/Tilesets/
     - assets/images/tiled/EPIC RPG World Pack Grass/Tilesets and props/
+    - assets/images/tiled/ERW-Grass Land/Props/Atlas-Props-individual sprites/
     - assets/images/characters/
     - assets/images/buttons/
     - assets/videos/

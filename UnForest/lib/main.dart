@@ -2,7 +2,6 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'character_selection_page.dart';
 import 'home_page.dart';
-import 'player/hero.dart';
 import 'game/game_page.dart';
 
 void main() async {
