@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'floresta.dart'; // Import da página de floresta
+import 'cidade.dart';
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -69,15 +70,17 @@ class BiomasPage extends StatelessWidget {
                     runSpacing: 16,
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
-                      final bool isFloresta = bioma == 'Floresta';
+                      // Verifica se o bioma está ativo/disponível
+                      final bool isDisponivel = bioma == 'Floresta' || bioma == 'Cidade';
+
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isFloresta ? Colors.green.shade600 : Colors.black45,
+                          backgroundColor: isDisponivel ? Colors.green.shade600 : Colors.black45,
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: BorderSide(
-                              color: isFloresta ? Colors.lightGreenAccent : Colors.white30,
+                              color: isDisponivel ? Colors.lightGreenAccent : Colors.white30,
                               width: 2,
                             ),
                           ),
@@ -86,7 +89,7 @@ class BiomasPage extends StatelessWidget {
                         child: Text(
                           bioma.toUpperCase(),
                           style: TextStyle(
-                            color: isFloresta ? Colors.white : Colors.white70,
+                            color: isDisponivel ? Colors.white : Colors.white70,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
