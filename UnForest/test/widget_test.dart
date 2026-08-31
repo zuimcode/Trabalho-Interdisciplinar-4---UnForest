@@ -6,13 +6,21 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:UnForest/main.dart';
-import 'package:UnForest/game/game_page.dart';
+import 'package:UnForest/cidade.dart';
 
 void main() {
   testWidgets('Carrega a tela do jogo', (WidgetTester tester) async {
-    // Substitua MyApp() por GamePage()
-    await tester.pumpWidget(const GamePage());
+    await tester.pumpWidget(const CidadePage());
+    await tester.pump();
+
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Image &&
+            widget.image is AssetImage &&
+            (widget.image as AssetImage).assetName == 'assets/images/buttons/balão_cidade.png',
+      ),
+      findsOneWidget,
+    );
   });
 }

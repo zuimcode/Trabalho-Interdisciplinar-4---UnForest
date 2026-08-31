@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'floresta.dart'; // Import da página de floresta
-import 'cidade.dart';
+import 'cidade.dart';   // Import da página de cidade
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -10,6 +10,12 @@ class BiomasPage extends StatelessWidget {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const FlorestaPage(),
+        ),
+      );
+    } else if (biomaName == 'Cidade') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const CidadePage(),
         ),
       );
     } else {
@@ -70,7 +76,7 @@ class BiomasPage extends StatelessWidget {
                     runSpacing: 16,
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
-                      // Verifica se o bioma está ativo/disponível
+                      // Libera Floresta e Cidade
                       final bool isDisponivel = bioma == 'Floresta' || bioma == 'Cidade';
 
                       return ElevatedButton(
