@@ -86,6 +86,10 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pushNamed('/character_selection');
   }
 
+  void _abrirBiomas() {
+    Navigator.of(context).pushNamed('/biomas');
+  }
+
   void _abrirConfiguracoes() {
     showSettingsDialog(context);
   }
@@ -127,6 +131,25 @@ class _HomePageState extends State<HomePage> {
                 child: SafeArea(
                   child: Stack(
                     children: [
+                      // --- BOTÃO TEMPORÁRIO PARA IR DIRETO AOS BIOMAS (CANTO SUPERIOR ESQUERDO) ---
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(_margemDosCantos),
+                          child: ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green.shade700,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            ),
+                            onPressed: _abrirBiomas,
+                            icon: const Icon(Icons.map),
+                            label: const Text('BIOMAS'),
+                          ),
+                        ),
+                      ),
+
+                      // Botão Novo Jogo
                       Align(
                         alignment: const Alignment(0.0, _alturaNovoJogo),
                         child: _BotaoImagem(
@@ -136,6 +159,8 @@ class _HomePageState extends State<HomePage> {
                           onTap: _abrirSelecaoDePersonagem,
                         ),
                       ),
+
+                      // Botão Sair (Canto Superior Direito)
                       Align(
                         alignment: Alignment.topRight,
                         child: Padding(
@@ -148,6 +173,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+
+                      // Botão Configurações (Canto Inferior Esquerdo)
                       Align(
                         alignment: Alignment.bottomLeft,
                         child: Padding(
@@ -161,6 +188,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+
+                      // Botão Créditos (Canto Inferior Direito)
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Padding(
