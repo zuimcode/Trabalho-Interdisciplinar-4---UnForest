@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
+import 'credits_page.dart';
 import 'settings_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -90,6 +91,10 @@ class _HomePageState extends State<HomePage> {
     showSettingsDialog(context);
   }
 
+  void _abrirCreditos() {
+    showCreditosDialog(context);
+  }
+
   void _sairDoJogo() {
     SystemNavigator.pop();
   }
@@ -170,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                                 '$_pastaBotoes/botão_créditos_interrogação_.png',
                             largura: ladoRedondo,
                             rotulo: 'Créditos',
-                            onTap: null,
+                            onTap: _abrirCreditos,
                           ),
                         ),
                       ),
