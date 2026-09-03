@@ -39,4 +39,14 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
     );
     return super.onLoad();
   }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+
+    if(hasGameRef && gameRef.map.size != Vector2.zero()) {
+      position.x = position.x.clamp(0, gameRef.map.size.x - size.x);
+      position.y = position.y.clamp(0, gameRef.map.size.y - size.y);
+    } 
+  }
 }

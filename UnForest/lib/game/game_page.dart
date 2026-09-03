@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:UnForest/player/hero.dart';
 
+
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
 
@@ -12,6 +13,8 @@ class GamePage extends StatelessWidget {
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('teste_mapa.json'),
       ),
+
+      
       playerControllers: [
         Joystick(directional: JoystickDirectional()),
         Keyboard(),
@@ -25,4 +28,6 @@ class GamePage extends StatelessWidget {
       ),
     );
   }
+
+  
 }
