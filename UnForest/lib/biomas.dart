@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'floresta.dart'; // Import da página de floresta
+import 'deserto.dart';  // Import da página do deserto
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -9,6 +10,12 @@ class BiomasPage extends StatelessWidget {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const FlorestaPage(),
+        ),
+      );
+    } else if (biomaName == 'Deserto') { 
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const DesertoPage(),
         ),
       );
     } else {
@@ -69,15 +76,17 @@ class BiomasPage extends StatelessWidget {
                     runSpacing: 16,
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
-                      final bool isFloresta = bioma == 'Floresta';
+                      // Agora verifica tanto Floresta quanto Deserto
+                      final bool isAvailable = bioma == 'Floresta' || bioma == 'Deserto'; 
+                      
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isFloresta ? Colors.green.shade600 : Colors.black45,
+                          backgroundColor: isAvailable ? Colors.green.shade600 : Colors.black45,
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: BorderSide(
-                              color: isFloresta ? Colors.lightGreenAccent : Colors.white30,
+                              color: isAvailable ? Colors.lightGreenAccent : Colors.white30,
                               width: 2,
                             ),
                           ),
@@ -86,7 +95,7 @@ class BiomasPage extends StatelessWidget {
                         child: Text(
                           bioma.toUpperCase(),
                           style: TextStyle(
-                            color: isFloresta ? Colors.white : Colors.white70,
+                            color: isAvailable ? Colors.white : Colors.white70,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
