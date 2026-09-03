@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'floresta.dart'; // Import da página de floresta
+import 'praia.dart';
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -11,7 +12,13 @@ class BiomasPage extends StatelessWidget {
           builder: (context) => const FlorestaPage(),
         ),
       );
-    } else {
+      } else if (biomaName == 'Praia') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const LixoTaskPage(),
+        ),
+      );
+      } else {
       // Exibe mensagem informativa para biomas que ainda não foram criados
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
