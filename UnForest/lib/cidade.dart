@@ -1,17 +1,18 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class ItemCidade {
   final UniqueKey id;
   Offset position;
   bool isBicycle;
+  double speed;
 
   ItemCidade({
     required this.id,
     required this.position,
-    this.isBicycle = false,   
+    this.isBicycle = false,
+    this.speed = 2.0,
   });
 }
 
@@ -23,25 +24,18 @@ class CidadePage extends StatefulWidget {
 }
 
 class _CidadePageState extends State<CidadePage> {
-  late VideoPlayerController _videoController;
   final List<ItemCidade> _itens = [];
   int _contadorBicicletas = 0;
   Timer? _timerSpawn;
+  Timer? _timerGameLoop;
   final Random _random = Random();
   bool _showInstructions = true;
   bool _showVictory = false;
+  bool _taskConcluida = false; // Controle para trocar o fundo
 
   @override
   void initState() {
     super.initState();
-    // 1. Inicializa o Vídeo de Fundo
-    _videoController = VideoPlayerController.asset(
-      'assets/videos/video-cidade/video_fundo_sempersonagens.mp4',
-    )..initialize().then((_) {
-        _videoController.setLooping(true);
-        _videoController.play();
-        setState(() {});
-      });
   }
 
   void _iniciarTask() {
@@ -51,31 +45,55 @@ class _CidadePageState extends State<CidadePage> {
 
     _timerSpawn?.cancel();
     _timerSpawn = Timer.periodic(const Duration(milliseconds: 1500), (timer) {
-      if (!mounted || _contadorBicicletas >= 10 || _showVictory) {
+      if (!mounted || _contadorBicicletas >= 10) {
         timer.cancel();
         return;
       }
-
       _gerarCarro();
+    });
+
+    // Loop de movimento (~60 FPS)
+    _timerGameLoop?.cancel();
+    _timerGameLoop = Timer.periodic(const Duration(milliseconds: 16), (timer) {
+      if (!mounted) return;
+      _atualizarPosicoes();
     });
   }
 
   void _gerarCarro() {
-    if (_itens.length >= 6) return; // Limite de itens simultâneos na tela
+    if (_itens.length >= 6 || _taskConcluida) return;
 
     final size = MediaQuery.of(context).size;
-    
-    // Define margens para o carro não aparecer fora da tela
-    double posX = _random.nextDouble() * (size.width - 100);
-    double posY = 100 + _random.nextDouble() * (size.height - 250);
+
+    // 3. Ajuste de altura: Posiciona os itens mais abaixo na tela (75% a 88%)
+    double minHeight = size.height * 0.60;
+    double maxHeight = size.height * 0.75;
+    double posY = minHeight + _random.nextDouble() * (maxHeight - minHeight);
+
+    double posX = -80.0;
+    double velocidade = 1.5 + _random.nextDouble() * 2.0;
 
     setState(() {
       _itens.add(
         ItemCidade(
           id: UniqueKey(),
           position: Offset(posX, posY),
+          speed: velocidade,
         ),
       );
+    });
+  }
+
+  void _atualizarPosicoes() {
+    final size = MediaQuery.of(context).size;
+
+    setState(() {
+      for (var item in _itens) {
+        item.position = Offset(item.position.dx + item.speed, item.position.dy);
+      }
+
+      // 2. Os itens (carros e bicicletas) continuam andando e só somem ao sair da tela
+      _itens.removeWhere((item) => item.position.dx > size.width + 100);
     });
   }
 
@@ -87,29 +105,35 @@ class _CidadePageState extends State<CidadePage> {
       _contadorBicicletas++;
     });
 
-    Future.delayed(const Duration(milliseconds: 1500), () {
-      if (mounted) {
-        setState(() {
-          _itens.removeWhere((element) => element.id == item.id);
-        });
-      }
-    });
+    // Removida a exclusão antecipada por tempo (Future.delayed) para deixá-las percorrer o caminho inteiro
 
-    if (_contadorBicicletas >= 10) {
-      _exibirTelaSucesso();
+    if (_contadorBicicletas >= 10 && !_taskConcluida) {
+      _concluirTask();
     }
   }
 
-  void _exibirTelaSucesso() {
+  void _concluirTask() {
+    _timerSpawn?.cancel(); // Para o surgimento de novos carros
+
+    // 1. Troca o fundo imediatamente para a versão colorida
     setState(() {
-      _showVictory = true;
+      _taskConcluida = true;
+    });
+
+    // Aguarda 5 segundos antes de exibir o pop-up de vitória
+    Future.delayed(const Duration(seconds: 5), () {
+      if (mounted) {
+        setState(() {
+          _showVictory = true;
+        });
+      }
     });
   }
 
   @override
   void dispose() {
     _timerSpawn?.cancel();
-    _videoController.dispose();
+    _timerGameLoop?.cancel();
     super.dispose();
   }
 
@@ -118,20 +142,17 @@ class _CidadePageState extends State<CidadePage> {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. Fundo em Vídeo
-          _videoController.value.isInitialized
-              ? SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    child: SizedBox(
-                      width: _videoController.value.size.width,
-                      height: _videoController.value.size.height,
-                      child: VideoPlayer(_videoController),
-                    ),
-                  ),
-                )
-              : const Center(child: CircularProgressIndicator()),
+          // 1. Troca dinâmica da imagem de fundo ao atingir a meta
+          SizedBox.expand(
+            child: Image.asset(
+              _taskConcluida
+                  ? 'assets/images/task-cidade/cidade_colorida.png'
+                  : 'assets/images/task-cidade/fundo_cinza.png',
+              fit: BoxFit.cover,
+            ),
+          ),
 
+          // Renderização contínua dos veículos até a vitória final
           if (!_showInstructions && !_showVictory)
             ..._itens.map((item) {
               return Positioned(
@@ -146,14 +167,15 @@ class _CidadePageState extends State<CidadePage> {
                           ? 'assets/images/task-cidade/bicicleta.png'
                           : 'assets/images/task-cidade/carro.png',
                       key: ValueKey(item.isBicycle),
-                      width: 80,
-                      height: 80,
+                      width: 130,
+                      height: 130,
                     ),
                   ),
                 ),
               );
             }).toList(),
 
+          // Indicador de Progresso
           if (!_showInstructions && !_showVictory)
             Positioned(
               top: 40,
@@ -186,6 +208,7 @@ class _CidadePageState extends State<CidadePage> {
               ),
             ),
 
+          // Tela Inicial de Instruções
           if (_showInstructions)
             Center(
               child: Column(
@@ -207,6 +230,7 @@ class _CidadePageState extends State<CidadePage> {
               ),
             ),
 
+          // Tela de Vitória (exibida 5 segundos após a conclusão)
           if (_showVictory)
             Container(
               color: Colors.black38,
