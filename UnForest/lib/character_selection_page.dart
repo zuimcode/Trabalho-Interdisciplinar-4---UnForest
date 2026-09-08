@@ -45,8 +45,10 @@ class _CharacterSelectionPageState extends State<CharacterSelectionPage> {
 
     // 2. Transiciona para a GamePage
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => const GamePage(),
+        MaterialPageRoute(
+        builder: (context) => GamePage(
+          selectedCharacter: _selectedCharacter!, 
+        ),
       ),
     );
   }

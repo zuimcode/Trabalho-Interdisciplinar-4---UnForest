@@ -17,6 +17,18 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
               : _animacoesGaia,
         );
 
+
+    factory Heroi.fromName({
+    required Vector2 position,
+    required String nomePersonagem,
+      }) {
+        final tipo = TipoPersonagem.values.firstWhere(
+          (e) => e.name == nomePersonagem.toLowerCase(),
+          orElse: () => TipoPersonagem.teco,
+        );
+        return Heroi(position: position, personagem: tipo);
+      }
+
   // --- Animações do Teco ---
   static SimpleDirectionAnimation get _animacoesTeco => SimpleDirectionAnimation(
         enabledFlipX: true,
