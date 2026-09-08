@@ -85,7 +85,7 @@ class BiomasPage extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
                       // Libera Floresta e Cidade
-                      final bool isDisponivel = bioma == 'Floresta' || bioma == 'Cidade';
+                      final bool isDisponivel = bioma == 'Floresta' || bioma == 'Cidade' || bioma == 'Praia';
 
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
