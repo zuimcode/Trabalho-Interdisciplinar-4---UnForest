@@ -28,9 +28,10 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
   // Lista inicial de lixos espalhados na tela
   late List<ItemLixo> _lixosRestantes;
 
-  // Controle de estado
-  bool _taskConcluida = false;
-  bool _lixeiraHighlight = false; // Para dar efeito visual quando passa o lixo por cima
+  // Controle de estado de fluxo do jogo
+  bool _gameIniciado = false; // Controla a tela inicial de instruções
+  bool _taskConcluida = false; // Controla se o jogo acabou
+  bool _lixeiraHighlight = false; // Para dar efeito visual na lixeira
 
   @override
   void initState() {
@@ -40,23 +41,20 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
 
   void _resetTask() {
     setState(() {
+      _gameIniciado = false;
       _taskConcluida = false;
       _lixeiraHighlight = false;
-      // Configure aqui a lista de lixos com seus assets e posições (em pixels ou % da tela)
       _lixosRestantes = [
-        ItemLixo(id: 'lixo_1', assetPath: 'assets/images/garrafa.png', top: 120, left: 50, size: 65),
-        ItemLixo(id: 'lixo_2', assetPath: 'assets/images/lata.png', top: 250, left: 220, size: 55),
-        ItemLixo(id: 'lixo_3', assetPath: 'assets/images/papel.png', top: 400, left: 80, size: 60),
-        ItemLixo(id: 'lixo_4', assetPath: 'assets/images/sacola.png', top: 320, left: 270, size: 70),
-        ItemLixo(id: 'lixo_5', assetPath: 'assets/images/maca.png', top: 180, left: 160, size: 50),
+        ItemLixo(id: 'lixo_1', assetPath: 'images/task_praia/garrafa.png', top: 450, left: 400, size: 150),
+        ItemLixo(id: 'lixo_2', assetPath: 'images/task_praia/lata.png', top: 450, left: 600, size: 150),
+        ItemLixo(id: 'lixo_3', assetPath: 'images/task_praia/peixe.png', top: 450, left: 800, size: 150),
+        ItemLixo(id: 'lixo_4', assetPath: 'images/task_praia/sacola.png', top: 450, left: 1000, size: 150),
+        ItemLixo(id: 'lixo_5', assetPath: 'images/task_praia/maca.png', top: 450, left: 200, size: 150),
       ];
     });
   }
 
-  // Chamado sempre que um lixo é jogado com sucesso na lixeira
   void _onLixoColetado(ItemLixo lixo) {
-    // Tocar som de coleta aqui se desejar (ex: AudioPlayer().play(AssetSource('audio/pop.mp3')))
-    
     setState(() {
       _lixosRestantes.removeWhere((item) => item.id == lixo.id);
 
@@ -67,7 +65,6 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
   }
 
   void _finalizarTask() {
-    // Tocar som de sucesso aqui
     setState(() {
       _taskConcluida = true;
     });
@@ -75,149 +72,182 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Stack(
         children: [
-          // 1. Fundo do Cenário
+          // 1. Fundo Dinâmico com Transição Suave (AnimatedCrossFade)
           Positioned.fill(
-            child: Image.asset(
-              'assets/images/fundo_cenario.png', // Seu fundo
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // 2. Contador / Indicador Topo
-          Positioned(
-            top: 40,
-            left: 20,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(12),
+            child: AnimatedCrossFade(
+              duration: const Duration(milliseconds: 1200), // Tempo da animação
+              crossFadeState: _taskConcluida
+                  ? CrossFadeState.showSecond
+                  : CrossFadeState.showFirst,
+              firstChild: Image.asset(
+                'images/task_praia/praia_feia2.png', // Praia Suja
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
               ),
-              child: Text(
-                'Lixos restantes: ${_lixosRestantes.length}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              secondChild: Image.asset(
+                'images/task_praia/praia_bonita.png', // Praia Limpa (Substitua pelo seu PNG)
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
               ),
             ),
           ),
 
-          // 3. A Lixeira (DragTarget)
-          Positioned(
-            bottom: 40,
-            right: 30,
-            child: DragTarget<ItemLixo>(
-              onWillAcceptWithDetails: (details) {
-                setState(() => _lixeiraHighlight = true);
-                return true;
-              },
-              onLeave: (_) {
-                setState(() => _lixeiraHighlight = false);
-              },
-              onAcceptWithDetails: (details) {
-                setState(() => _lixeiraHighlight = false);
-                _onLixoColetado(details.data);
-              },
-              builder: (context, candidateData, rejectedData) {
-                return AnimatedScale(
-                  scale: _lixeiraHighlight ? 1.15 : 1.0,
-                  duration: const Duration(milliseconds: 150),
-                  child: Image.asset(
-                    _lixeiraHighlight
-                        ? 'assets/images/lixeira_aberta.png' // Opcional: imagem da lixeira aberta
-                        : 'assets/images/lixeira.png',
-                    width: 120,
-                    height: 140,
-                  ),
-                );
-              },
-            ),
-          ),
-
-          // 4. Lixos Espalhados na Tela (Draggables)
-          ..._lixosRestantes.map((lixo) {
-            return Positioned(
-              top: lixo.top,
-              left: lixo.left,
-              child: Draggable<ItemLixo>(
-                data: lixo,
-                // Imagem arrastada pelo dedo
-                feedback: Material(
-                  color: Colors.transparent,
-                  child: Image.asset(
-                    lixo.assetPath,
-                    width: lixo.size * 1.2,
-                    height: lixo.size * 1.2,
+          // 2. Elementos do Jogo (Só aparecem enquanto o jogo estiver rolando)
+          if (_gameIniciado && !_taskConcluida) ...[
+            // Contador / Indicador Topo
+            Positioned(
+              top: 40,
+              left: 20,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  'Lixos restantes: ${_lixosRestantes.length}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                // O que fica na posição original enquanto arrasta (transparente)
-                childWhenDragging: Opacity(
-                  opacity: 0.3,
+              ),
+            ),
+
+            // A Lixeira (DragTarget)
+            Positioned(
+              bottom: 40,
+              right: 30,
+              child: DragTarget<ItemLixo>(
+                onWillAcceptWithDetails: (details) {
+                  setState(() => _lixeiraHighlight = true);
+                  return true;
+                },
+                onLeave: (_) {
+                  setState(() => _lixeiraHighlight = false);
+                },
+                onAcceptWithDetails: (details) {
+                  setState(() => _lixeiraHighlight = false);
+                  _onLixoColetado(details.data);
+                },
+                builder: (context, candidateData, rejectedData) {
+                  return AnimatedScale(
+                    scale: _lixeiraHighlight ? 1.15 : 1.0,
+                    duration: const Duration(milliseconds: 150),
+                    child: Image.asset(
+                      _lixeiraHighlight
+                          ? 'images/task_praia/lixeira_aberta.png'
+                          : 'images/task_praia/lixeira_fechada.png',
+                      width: 300,
+                      height: 360,
+                    ),
+                  );
+                },
+              ),
+            ),
+
+            // Lixos Espalhados na Tela (Draggables)
+            ..._lixosRestantes.map((lixo) {
+              return Positioned(
+                top: lixo.top,
+                left: lixo.left,
+                child: Draggable<ItemLixo>(
+                  data: lixo,
+                  feedback: Material(
+                    color: Colors.transparent,
+                    child: Image.asset(
+                      lixo.assetPath,
+                      width: lixo.size * 1.2,
+                      height: lixo.size * 1.2,
+                    ),
+                  ),
+                  childWhenDragging: Opacity(
+                    opacity: 0.3,
+                    child: Image.asset(
+                      lixo.assetPath,
+                      width: lixo.size,
+                      height: lixo.size,
+                    ),
+                  ),
                   child: Image.asset(
                     lixo.assetPath,
                     width: lixo.size,
                     height: lixo.size,
                   ),
                 ),
-                // Imagem normal parada na tela
-                child: Image.asset(
-                  lixo.assetPath,
-                  width: lixo.size,
-                  height: lixo.size,
-                ),
-              ),
-            );
-          }).toList(),
+              );
+            }).toList(),
+          ],
 
-          // 5. Overlay de Vitória / Conclusão
+          // 3. Overlay Inicial (Instruções do Jogo)
+          if (!_gameIniciado) _buildIntroOverlay(),
+
+          // 4. Overlay de Vitória (Final do Jogo)
           if (_taskConcluida) _buildVictoryOverlay(),
         ],
       ),
     );
   }
 
-  // Widget do Overlay de Vitória
-  Widget _buildVictoryOverlay() {
+  // Widget da Tela de Instruções (Antes do jogo começar)
+  Widget _buildIntroOverlay() {
     return Container(
-      color: Colors.black.withOpacity(0.7),
+      color: Colors.black.withOpacity(0.75),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.check_circle_outline,
-              color: Colors.greenAccent,
-              size: 100,
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'Área Limpa!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Você recolheu todo o lixo com sucesso.',
-              style: TextStyle(color: Colors.white70, fontSize: 16),
+            // PNG com as Instruções
+            Image.asset(
+              'images/buttons/balao_fala_pergaminho.png', // Seu PNG explicativo
+              width: 400,
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+            // Botão para iniciar o jogo
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _gameIniciado = true;
+                });
+              },
+              child: Image.asset(
+                'images/buttons/botao_check.png', // Seu botão de Start/Play
+                width: 150,
               ),
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Concluir', style: TextStyle(fontSize: 18, color: Colors.white)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Widget da Tela de Vitória (Quando o jogo acaba)
+  Widget _buildVictoryOverlay() {
+    return Container(
+      color: Colors.black.withOpacity(0.6),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // PNG de mensagem final
+            Image.asset(
+              'images/buttons/balao_fala_pergaminho.png', // Seu PNG de Conclusão/Parabéns
+              width: 400,
+            ),
+            const SizedBox(height: 24),
+            // Botão para fechar a tela/sair da missão
+            GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(
+                'images/buttons/botao_saida.png', // Seu botão para Sair
+                width: 100,
+              ),
             ),
           ],
         ),
