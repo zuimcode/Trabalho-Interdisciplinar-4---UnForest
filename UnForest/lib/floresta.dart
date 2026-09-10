@@ -46,7 +46,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
   Future<void> _playErrorSound() async {
     try {
       await _audioPlayer.stop();
-      await _audioPlayer.play(AssetSource('audio/erro.mp3')); // Adicione seu som de erro em assets/audio/erro.mp3
+      await _audioPlayer.play(AssetSource('audio/erro.mp3'));
     } catch (_) {}
   }
 
@@ -54,17 +54,12 @@ class _FlorestaPageState extends State<FlorestaPage> {
   Future<void> _playSuccessSound() async {
     try {
       await _audioPlayer.stop();
-      await _audioPlayer.play(AssetSource('audio/sucesso.mp3')); // Adicione seu som de sucesso em assets/audio/sucesso.mp3
+      await _audioPlayer.play(AssetSource('audio/sucesso.mp3'));
     } catch (_) {}
   }
 
   // Função para validar o item arrastado até o buraco
   void _onItemDropped(String itemType) {
-    // Ordem correta esperada:
-    // Estágio 0 espera: semente
-    // Estágio 1 espera: terra
-    // Estágio 2 espera: regador
-    // Estágio 3 espera: muda
     bool isCorrect = false;
 
     if (_plantStage == 0 && itemType == 'semente') isCorrect = true;
@@ -77,12 +72,10 @@ class _FlorestaPageState extends State<FlorestaPage> {
         _plantStage++;
       });
 
-      // Se atingiu a última etapa do processo manual (estágio 4: muda inserida)
       if (_plantStage == 4) {
         _finishPlantingSequence();
       }
     } else {
-      // Caso errar a sequência
       _playErrorSound();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -96,18 +89,16 @@ class _FlorestaPageState extends State<FlorestaPage> {
 
   // Sequência final de crescimento e conclusão da task
   void _finishPlantingSequence() {
-    // Aguarda 3 segundos após a muda ser colocada para crescer para a árvore grande
-    Future.delayed(const Duration(seconds: 3), () {
+    // Reduzido para 1 segundo de espera após a muda ser colocada
+    Future.delayed(const Duration(seconds: 1), () {
       if (!mounted) return;
       setState(() {
-        _plantStage = 5; // Imagem da árvore adulta
-        _taskCompleted = true; // Alterna o fundo para a floresta bonita
+        _plantStage = 5;
+        _taskCompleted = true;
       });
 
-      // Toca som de vitória
       _playSuccessSound();
 
-      // Exibe a tela/overlay de vitória com a mensagem "você conseguiu"
       Future.delayed(const Duration(milliseconds: 1000), () {
         if (!mounted) return;
         setState(() {
@@ -119,6 +110,11 @@ class _FlorestaPageState extends State<FlorestaPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Obter dimensões da tela com MediaQuery
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -127,7 +123,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
           // ==========================================
           Positioned.fill(
             child: AnimatedSwitcher(
-              duration: const Duration(seconds: 2), // Transição suave entre feia e bonita
+              duration: const Duration(seconds: 2),
               child: Image.asset(
                 _taskCompleted
                     ? '../assets/images/task-floresta/floresta_bonita.JPG'
@@ -144,7 +140,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
           if (_taskCompleted)
             Positioned.fill(
               child: Container(
-                color: Colors.amber.withOpacity(0.15), // Efeito de brilho de iluminação
+                color: Colors.amber.withOpacity(0.15),
               ),
             ),
 
@@ -161,9 +157,9 @@ class _FlorestaPageState extends State<FlorestaPage> {
             SafeArea(
               child: Stack(
                 children: [
-                  // --- BURACO / PLANTA NO MEIO DA TELA ---
+                  // --- BURACO / PLANTA NO MEIO DA TELA (Colocado mais para baixo) ---
                   Align(
-                    alignment: const Alignment(0.0, 0.4), // Ajuste de posição no meio um pouco para baixo
+                    alignment: const Alignment(0.0, 0.65), // Ajustado de 0.4 para 0.65 para posicionar mais abaixo
                     child: DragTarget<String>(
                       onWillAcceptWithDetails: (details) => true,
                       onAcceptWithDetails: (details) {
@@ -175,7 +171,9 @@ class _FlorestaPageState extends State<FlorestaPage> {
                           child: Image.asset(
                             _plantImages[_plantStage],
                             key: ValueKey<int>(_plantStage),
-                            height: _plantStage == 5 ? 200 : 120, // Aumenta de tamanho quando vira árvore
+                            height: _plantStage == 5
+                                ? screenHeight * 0.25
+                                : screenHeight * 0.15,
                           ),
                         );
                       },
@@ -187,13 +185,21 @@ class _FlorestaPageState extends State<FlorestaPage> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 32.0),
+                      padding: EdgeInsets.only(left: screenWidth * 0.08),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildDraggableItem('semente', '../assets/images/task-floresta/semente_task_floresta.png'),
-                          const SizedBox(height: 24),
-                          _buildDraggableItem('regador', '../assets/images/task-floresta/regador_task_floresta.png'),
+                          _buildDraggableItem(
+                            'semente',
+                            '../assets/images/task-floresta/semente_task_floresta.png',
+                            screenHeight,
+                          ),
+                          SizedBox(height: screenHeight * 0.03),
+                          _buildDraggableItem(
+                            'regador',
+                            '../assets/images/task-floresta/regador_task_floresta.png',
+                            screenHeight,
+                          ),
                         ],
                       ),
                     ),
@@ -203,13 +209,21 @@ class _FlorestaPageState extends State<FlorestaPage> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 32.0),
+                      padding: EdgeInsets.only(right: screenWidth * 0.08),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildDraggableItem('terra', '../assets/images/task-floresta/terra_task_floresta.png'),
-                          const SizedBox(height: 24),
-                          _buildDraggableItem('muda', '../assets/images/task-floresta/muda_task_floresta.png'),
+                          _buildDraggableItem(
+                            'terra',
+                            '../assets/images/task-floresta/terra_task_floresta.png',
+                            screenHeight,
+                          ),
+                          SizedBox(height: screenHeight * 0.03),
+                          _buildDraggableItem(
+                            'muda',
+                            '../assets/images/task-floresta/muda_task_floresta.png',
+                            screenHeight,
+                          ),
                         ],
                       ),
                     ),
@@ -219,37 +233,32 @@ class _FlorestaPageState extends State<FlorestaPage> {
             ),
 
           // ==========================================
-          // 3. INÍCIO DO TRECHO DO CÓDIGO: TELA DE INSTRUÇÕES
+          // 3. TELA DE INSTRUÇÕES
           // ==========================================
           if (_showInstructions)
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Imagem das instruções
                   Image.asset(
                     '../assets/images/task-floresta/instrucoes-floresta.png',
-                    height: 220,
+                    height: screenHeight * 0.28,
                   ),
-                  const SizedBox(height: 20),
-                  // Botão check para iniciar a task
+                  SizedBox(height: screenHeight * 0.025),
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        _showInstructions = false; // Fecha as instruções e inicia a task
+                        _showInstructions = false;
                       });
                     },
                     child: Image.asset(
                       '../assets/images/buttons/botao_check.png',
-                      height: 70,
+                      height: screenHeight * 0.09,
                     ),
                   ),
                 ],
               ),
             ),
-          // ==========================================
-          // FIM DO TRECHO DO CÓDIGO: TELA DE INSTRUÇÕES
-          // ==========================================
 
           // ==========================================
           // 4. OVERLAY DE VITÓRIA / TELA FINAL
@@ -261,20 +270,18 @@ class _FlorestaPageState extends State<FlorestaPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Imagem "Você conseguiu"
                     Image.asset(
-                      '../assets/images/task-floresta/instrucoes-floresta.png', // Substitua pelo caminho da imagem "você conseguiu" se houver uma específica
-                      height: 180,
+                      '../assets/images/task-floresta/instrucoes-floresta.png',
+                      height: screenHeight * 0.23,
                     ),
-                    const SizedBox(height: 20),
-                    // Botão de Voltar (X)
+                    SizedBox(height: screenHeight * 0.025),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop(); // Voltar para a tela anterior
+                        Navigator.of(context).pop();
                       },
                       child: Image.asset(
                         '../assets/images/buttons/botao_saida.png',
-                        height: 75,
+                        height: screenHeight * 0.095,
                       ),
                     ),
                   ],
@@ -286,27 +293,29 @@ class _FlorestaPageState extends State<FlorestaPage> {
     );
   }
 
-  // Widget auxiliar para criar os itens arrastáveis
-  Widget _buildDraggableItem(String itemType, String imagePath) {
+  Widget _buildDraggableItem(String itemType, String imagePath, double screenHeight) {
+    final itemHeight = screenHeight * 0.09;
+    final feedbackHeight = screenHeight * 0.10;
+
     return Draggable<String>(
       data: itemType,
       feedback: Material(
         color: Colors.transparent,
         child: Image.asset(
           imagePath,
-          height: 80,
+          height: feedbackHeight,
         ),
       ),
       childWhenDragging: Opacity(
         opacity: 0.3,
         child: Image.asset(
           imagePath,
-          height: 70,
+          height: itemHeight,
         ),
       ),
       child: Image.asset(
         imagePath,
-        height: 70,
+        height: itemHeight,
       ),
     );
   }
