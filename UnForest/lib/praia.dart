@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Modelo para representar cada lixo na tela
 class ItemLixo {
   final String id;
   final String assetPath;
@@ -25,12 +24,11 @@ class LixoTaskPage extends StatefulWidget {
 }
 
 class _LixoTaskPageState extends State<LixoTaskPage> {
-  // Lista inicial de lixos espalhados na tela
+
   late List<ItemLixo> _lixosRestantes;
 
-  // Controle de estado de fluxo do jogo
-  bool _gameIniciado = false; // Controla a tela inicial de instruções
-  bool _taskConcluida = false; // Controla se o jogo acabou
+  bool _gameIniciado = false; 
+  bool _taskConcluida = false; 
   bool _lixeiraHighlight = false; // Para dar efeito visual na lixeira
 
   @override
@@ -83,7 +81,7 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
                   ? CrossFadeState.showSecond
                   : CrossFadeState.showFirst,
               firstChild: Image.asset(
-                'images/task_praia/praia_feia2.png', // Praia Suja
+                'images/task_praia/praia_feia3.png', // Praia Suja
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
