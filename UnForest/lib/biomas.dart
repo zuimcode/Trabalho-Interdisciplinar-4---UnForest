@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'floresta.dart'; // Import da página de floresta
-import 'cidade.dart';   // Import da página de cidade
+import 'floresta.dart';
+import 'cidade.dart';
 import 'praia.dart';
 import 'gelo.dart';
+import 'deserto.dart';
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -10,30 +11,25 @@ class BiomasPage extends StatelessWidget {
   void _navigateToBioma(BuildContext context, String biomaName) {
     if (biomaName == 'Floresta') {
       Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const FlorestaPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const FlorestaPage()),
       );
     } else if (biomaName == 'Cidade') {
       Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const CidadePage(),
-        ),
+        MaterialPageRoute(builder: (context) => const CidadePage()),
       );
-    }
-      else if (biomaName == 'Praia') {
+    } else if (biomaName == 'Praia') {
       Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const LixoTaskPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const LixoTaskPage()), // Assumindo LixoTaskPage para Praia
       );
-      } else if (biomaName == 'Gelo') {
+    } else if (biomaName == 'Gelo') {
       Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const GeloPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const GeloPage()),
       );
-      } else {
+    } else if (biomaName == 'Deserto') {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const DesertoPage()),
+      );
+    } else {
       // Exibe mensagem informativa para biomas que ainda não foram criados
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -85,26 +81,35 @@ class BiomasPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
 
-                  // Linha com os 5 botões de biomas
+                  // Linha com os botões de biomas
                   Wrap(
                     spacing: 16,
                     runSpacing: 16,
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
-                      // Libera Floresta, Cidade, Praia e Gelo
-                      final bool isDisponivel = bioma == 'Floresta' ||
+                      // Libera todos os 5 biomas que já possuem páginas criadas
+                      final bool isDisponivel =
+                          bioma == 'Floresta' ||
                           bioma == 'Cidade' ||
                           bioma == 'Praia' ||
-                          bioma == 'Gelo';
+                          bioma == 'Gelo' ||
+                          bioma == 'Deserto';
 
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isDisponivel ? Colors.green.shade600 : Colors.black45,
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                          backgroundColor: isDisponivel
+                              ? Colors.green.shade600
+                              : Colors.black45,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 16,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: BorderSide(
-                              color: isDisponivel ? Colors.lightGreenAccent : Colors.white30,
+                              color: isDisponivel
+                                  ? Colors.lightGreenAccent
+                                  : Colors.white30,
                               width: 2,
                             ),
                           ),
