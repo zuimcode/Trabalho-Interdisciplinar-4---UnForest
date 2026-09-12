@@ -18,8 +18,8 @@ class _DesertoPageState extends State<DesertoPage> {
   int _camelStage = 0;
 
   final List<String> _camelImages = [
-    '../assets/images/task-deserto/camelo_com_sede.png',
-    '../assets/images/task-deserto/camelo_feliz.png',
+    'assets/images/task-deserto/camelo_sede.png',
+    'assets/images/task-deserto/camelo_feliz.png',
   ];
 
   @override
@@ -65,7 +65,7 @@ class _DesertoPageState extends State<DesertoPage> {
     _playErrorSound();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Cuidado! Você perdeu a $itemType no(a) $obstacleName!'),
+        content: Text('Cuidado! Você perdeu o item!'),
         duration: const Duration(seconds: 2),
         backgroundColor: Colors.orange.shade800,
       ),
@@ -126,6 +126,9 @@ class _DesertoPageState extends State<DesertoPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Obter dimensões da tela com MediaQuery
+    //final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -135,8 +138,8 @@ class _DesertoPageState extends State<DesertoPage> {
               duration: const Duration(seconds: 2),
               child: _buildImageWithFallback(
                 path: _taskCompleted
-                    ? '../assets/images/task-deserto/deserto_feliz.JPG'
-                    : '../assets/images/task-deserto/deserto_seco.JPG',
+                    ? 'assets/images/task-deserto/oasis.jpeg'
+                    : 'assets/images/task-deserto/deserto_cinza.jpeg',
                 height: double.infinity,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -167,18 +170,18 @@ class _DesertoPageState extends State<DesertoPage> {
                   Align(
                     alignment: const Alignment(-0.1, -0.2), 
                     child: _buildObstacle(
-                      obstacleName: 'CACTO GIGANTE',
-                      imagePath: '../assets/images/task-deserto/cacto_gigante.png',
+                      obstacleName: 'Cacto',
+                      imagePath: 'assets/images/task-deserto/cacto.png',
                       fallbackColor: Colors.green.shade800,
                     ),
                   ),
 
-                  // --- OBSTÁCULO 2 (AREIA MOVEDIÇA) ---
+                  // --- OBSTÁCULO 2 (PEDRA) ---
                   Align(
                     alignment: const Alignment(0.0, 0.7), 
                     child: _buildObstacle(
-                      obstacleName: 'AREIA MOVEDIÇA',
-                      imagePath: '../assets/images/task-deserto/areia_movedica.png',
+                      obstacleName: 'Pedra',
+                      imagePath: 'assets/images/task-deserto/pedra.png',
                       fallbackColor: Colors.brown.shade700,
                     ),
                   ),
@@ -211,7 +214,7 @@ class _DesertoPageState extends State<DesertoPage> {
                     alignment: Alignment.bottomLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 32.0, bottom: 32.0),
-                      child: _buildDraggableItem('agua', '../assets/images/task-deserto/agua_oasis.png', Colors.blue, 'ÁGUA'),
+                      child: _buildDraggableItem('agua', 'assets/images/task-deserto/balde.png', Colors.blue, 'Água'),
                     ),
                   ),
 
@@ -220,7 +223,7 @@ class _DesertoPageState extends State<DesertoPage> {
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 32.0, top: 32.0),
-                      child: _buildDraggableItem('pedra', '../assets/images/task-deserto/pedra.png', Colors.grey, 'PEDRA'),
+                      child: _buildDraggableItem('osso', 'assets/images/task-deserto/osso.png', Colors.grey, 'Osso'),
                     ),
                   ),
                 ],
@@ -234,7 +237,7 @@ class _DesertoPageState extends State<DesertoPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _buildImageWithFallback(
-                    path: '../assets/images/task-deserto/instrucoes-deserto.png',
+                    path: 'assets/images/task-deserto/instrucoes-deserto.png',
                     height: 220,
                     width: 300,
                     fallbackColor: Colors.white38,
@@ -248,7 +251,7 @@ class _DesertoPageState extends State<DesertoPage> {
                       });
                     },
                     child: _buildImageWithFallback(
-                      path: '../assets/images/buttons/botao_check.png',
+                      path: 'assets/images/buttons/botao_check.png',
                       height: 70,
                       width: 140,
                       fallbackColor: Colors.green,
@@ -259,7 +262,9 @@ class _DesertoPageState extends State<DesertoPage> {
               ),
             ),
 
-          // 4. OVERLAY DE VITÓRIA
+          // ==========================================
+          // 4. OVERLAY DE VITÓRIA / TELA FINAL
+          // ==========================================
           if (_showVictory)
             Container(
               color: Colors.black38,
@@ -267,24 +272,18 @@ class _DesertoPageState extends State<DesertoPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildImageWithFallback(
-                      path: '../assets/images/task-deserto/vitoria-deserto.png',
+                    Image.asset(
+                      'assets/images/buttons/balão_task_concluida.png',
                       height: 180,
-                      width: 300,
-                      fallbackColor: Colors.white38,
-                      fallbackText: 'VITÓRIA!',
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: _buildImageWithFallback(
-                        path: '../assets/images/buttons/botao_saida.png',
+                      child: Image.asset(
+                        'assets/images/buttons/botao_saida.png',
                         height: 75,
-                        width: 75,
-                        fallbackColor: Colors.redAccent,
-                        fallbackText: 'SAIR',
                       ),
                     ),
                   ],
