@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'floresta.dart'; // Import da página de floresta
 import 'cidade.dart';   // Import da página de cidade
 import 'praia.dart';
+import 'gelo.dart';
 
 class BiomasPage extends StatelessWidget {
   const BiomasPage({super.key});
@@ -24,6 +25,12 @@ class BiomasPage extends StatelessWidget {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const LixoTaskPage(),
+        ),
+      );
+      } else if (biomaName == 'Gelo') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const GeloPage(),
         ),
       );
       } else {
@@ -84,8 +91,11 @@ class BiomasPage extends StatelessWidget {
                     runSpacing: 16,
                     alignment: WrapAlignment.center,
                     children: biomas.map((bioma) {
-                      // Libera Floresta e Cidade
-                      final bool isDisponivel = bioma == 'Floresta' || bioma == 'Cidade' || bioma == 'Praia';
+                      // Libera Floresta, Cidade, Praia e Gelo
+                      final bool isDisponivel = bioma == 'Floresta' ||
+                          bioma == 'Cidade' ||
+                          bioma == 'Praia' ||
+                          bioma == 'Gelo';
 
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
