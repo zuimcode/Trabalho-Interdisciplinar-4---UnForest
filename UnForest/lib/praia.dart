@@ -43,11 +43,11 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
       _taskConcluida = false;
       _lixeiraHighlight = false;
       _lixosRestantes = [
-        ItemLixo(id: 'lixo_1', assetPath: 'images/task_praia/garrafa.png', top: 450, left: 400, size: 150),
-        ItemLixo(id: 'lixo_2', assetPath: 'images/task_praia/lata.png', top: 450, left: 600, size: 150),
-        ItemLixo(id: 'lixo_3', assetPath: 'images/task_praia/peixe.png', top: 450, left: 800, size: 150),
-        ItemLixo(id: 'lixo_4', assetPath: 'images/task_praia/sacola.png', top: 450, left: 1000, size: 150),
-        ItemLixo(id: 'lixo_5', assetPath: 'images/task_praia/maca.png', top: 450, left: 200, size: 150),
+        ItemLixo(id: 'lixo_1', assetPath: 'assets/images/task_praia/garrafa.png', top: 150, left: 400, size: 80),
+        ItemLixo(id: 'lixo_2', assetPath: 'assets/images/task_praia/lata.png', top: 150, left: 500, size: 80),
+        ItemLixo(id: 'lixo_3', assetPath: 'assets/images/task_praia/peixe.png', top: 150, left: 300, size: 80),
+        ItemLixo(id: 'lixo_4', assetPath: 'assets/images/task_praia/sacola.png', top: 150, left: 200, size: 80),
+        ItemLixo(id: 'lixo_5', assetPath: 'assets/images/task_praia/maca.png', top: 150, left: 100, size: 80),
       ];
     });
   }
@@ -81,13 +81,13 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
                   ? CrossFadeState.showSecond
                   : CrossFadeState.showFirst,
               firstChild: Image.asset(
-                'images/task_praia/praia_feia3.png', // Praia Suja
+                'assets/images/task_praia/praia_feia3.png', // Praia Suja
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
               ),
               secondChild: Image.asset(
-                'images/task_praia/praia_bonita.png', // Praia Limpa (Substitua pelo seu PNG)
+                'assets/images/task_praia/praia_bonita.png', // Praia Limpa (Substitua pelo seu PNG)
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -140,8 +140,8 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
                     duration: const Duration(milliseconds: 150),
                     child: Image.asset(
                       _lixeiraHighlight
-                          ? 'images/task_praia/lixeira_aberta.png'
-                          : 'images/task_praia/lixeira_fechada.png',
+                          ? 'assets/images/task_praia/lixeira_aberta.png'
+                          : 'assets/images/task_praia/lixeira_fechada.png',
                       width: 300,
                       height: 360,
                     ),
@@ -203,7 +203,7 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
           children: [
             // PNG com as Instruções
             Image.asset(
-              'images/task_praia/balao_praia.png', // Seu PNG explicativo
+              'assets/images/task_praia/balao_praia.png', // Seu PNG explicativo
               width: 400,
             ),
             const SizedBox(height: 24),
@@ -215,7 +215,7 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
                 });
               },
               child: Image.asset(
-                'images/buttons/botao_check.png', // Seu botão de Start/Play
+                'assets/images/buttons/botao_check.png', // Seu botão de Start/Play
                 width: 150,
               ),
             ),
@@ -235,7 +235,7 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
           children: [
             // PNG de mensagem final
             Image.asset(
-              'images/task_praia/balao_task_concluida.png', // Seu PNG de Conclusão/Parabéns
+              'assets/images/task_praia/balao_task_concluida.png', // Seu PNG de Conclusão/Parabéns
               width: 400,
             ),
             const SizedBox(height: 24),
@@ -243,7 +243,7 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
             GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Image.asset(
-                'images/buttons/botao_saida.png', // Seu botão para Sair
+                'assets/images/buttons/botao_saida.png', // Seu botão para Sair
                 width: 100,
               ),
             ),

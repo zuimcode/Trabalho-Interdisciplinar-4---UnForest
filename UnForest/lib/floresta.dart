@@ -28,12 +28,12 @@ class _FlorestaPageState extends State<FlorestaPage> {
 
   // Lista dos caminhos das imagens da evolução da planta no buraco
   final List<String> _plantImages = [
-    '../assets/images/task-floresta/buraco_terra_task_floresta.png',
-    '../assets/images/task-floresta/terra_com_semente_task_floresta.png',
-    '../assets/images/task-floresta/terra_coberta_task_floresta.png',
-    '../assets/images/task-floresta/terra_molhada_task_floresta.png',
-    '../assets/images/task-floresta/terra_com_muda_task_floresta.png',
-    '../assets/images/task-floresta/arvore_task_floresta.png',
+    'assets/images/task-floresta/buraco_terra_task_floresta.png',
+    'assets/images/task-floresta/terra_com_semente_task_floresta.png',
+    'assets/images/task-floresta/terra_coberta_task_floresta.png',
+    'assets/images/task-floresta/terra_molhada_task_floresta.png',
+    'assets/images/task-floresta/terra_com_muda_task_floresta.png',
+    'assets/images/task-floresta/arvore_task_floresta.png',
   ];
 
   @override
@@ -126,8 +126,8 @@ class _FlorestaPageState extends State<FlorestaPage> {
               duration: const Duration(seconds: 2),
               child: Image.asset(
                 _taskCompleted
-                    ? '../assets/images/task-floresta/floresta_bonita.JPG'
-                    : '../assets/images/task-floresta/floresta_feia.JPG',
+                    ? 'assets/images/task-floresta/floresta_bonita.JPG'
+                    : 'assets/images/task-floresta/floresta_feia.JPG',
                 key: ValueKey<bool>(_taskCompleted),
                 fit: BoxFit.cover,
                 width: double.infinity,
@@ -191,13 +191,13 @@ class _FlorestaPageState extends State<FlorestaPage> {
                         children: [
                           _buildDraggableItem(
                             'semente',
-                            '../assets/images/task-floresta/semente_task_floresta.png',
+                            'assets/images/task-floresta/semente_task_floresta.png',
                             screenHeight,
                           ),
                           SizedBox(height: screenHeight * 0.03),
                           _buildDraggableItem(
                             'regador',
-                            '../assets/images/task-floresta/regador_task_floresta.png',
+                            'assets/images/task-floresta/regador_task_floresta.png',
                             screenHeight,
                           ),
                         ],
@@ -215,13 +215,13 @@ class _FlorestaPageState extends State<FlorestaPage> {
                         children: [
                           _buildDraggableItem(
                             'terra',
-                            '../assets/images/task-floresta/terra_task_floresta.png',
+                            'assets/images/task-floresta/terra_task_floresta.png',
                             screenHeight,
                           ),
                           SizedBox(height: screenHeight * 0.03),
                           _buildDraggableItem(
                             'muda',
-                            '../assets/images/task-floresta/muda_task_floresta.png',
+                            'assets/images/task-floresta/muda_task_floresta.png',
                             screenHeight,
                           ),
                         ],
@@ -241,7 +241,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    '../assets/images/task-floresta/instrucoes-floresta.png',
+                    'assets/images/task-floresta/instrucoes-floresta.png',
                     height: screenHeight * 0.28,
                   ),
                   SizedBox(height: screenHeight * 0.025),
@@ -252,7 +252,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
                       });
                     },
                     child: Image.asset(
-                      '../assets/images/buttons/botao_check.png',
+                      'assets/images/buttons/botao_check.png',
                       height: screenHeight * 0.09,
                     ),
                   ),
@@ -271,7 +271,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      '../assets/images/task-floresta/instrucoes-floresta.png',
+                      'assets/images/task-floresta/instrucoes-floresta.png',
                       height: screenHeight * 0.23,
                     ),
                     SizedBox(height: screenHeight * 0.025),
@@ -280,7 +280,7 @@ class _FlorestaPageState extends State<FlorestaPage> {
                         Navigator.of(context).pop();
                       },
                       child: Image.asset(
-                        '../assets/images/buttons/botao_saida.png',
+                        'assets/images/buttons/botao_saida.png',
                         height: screenHeight * 0.095,
                       ),
                     ),
