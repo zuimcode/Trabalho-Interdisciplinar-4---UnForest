@@ -11,11 +11,13 @@ import 'package:sensors_plus/sensors_plus.dart';
 /// Sinal aplicado a leitura do acelerometro.
 ///
 /// A pagina fica travada em `landscapeLeft` enquanto esta aberta, entao o eixo
-/// Y do aparelho aponta para a direita da tela: inclinar a borda esquerda do
-/// celular para baixo deixa o Y positivo, e o filhote anda para a esquerda.
+/// Y do aparelho aponta sempre para o mesmo lado da tela. Com a leitura crua o
+/// filhote andava para o lado contrario ao que o aparelho era inclinado, o que
+/// foi confirmado testando no aparelho, entao o sinal e invertido aqui.
 ///
-/// Se no aparelho a direcao sair invertida, troque este valor para -1.0.
-const double _sinalDoEixo = 1.0;
+/// Este e o unico ponto que define a direcao: o resto do arquivo trabalha com
+/// a inclinacao ja corrigida, onde positivo significa virado para a esquerda.
+const double _sinalDoEixo = -1.0;
 
 /// Inclinacao (em m/s^2) ignorada para o celular parado na mao nao fazer o
 /// filhote andar sozinho.
