@@ -32,8 +32,17 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
   // --- Animações do Teco ---
   static SimpleDirectionAnimation get _animacoesTeco => SimpleDirectionAnimation(
         enabledFlipX: true,
-        idleRight: SpriteAnimation.load(
+        idleDown: SpriteAnimation.load(
           'characters/teco_idle.png',
+          SpriteAnimationData.sequenced(
+            amount: 8,
+            stepTime: 0.15,
+            textureSize: Vector2(128, 128),
+            texturePosition: Vector2(0, 0),
+          ),
+        ),
+        runDown: SpriteAnimation.load(
+          'characters/teco_run.png',
           SpriteAnimationData.sequenced(
             amount: 8,
             stepTime: 0.15,
@@ -50,12 +59,21 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
             texturePosition: Vector2(0, 0),
           ),
         ),
+        runLeft: SpriteAnimation.load(
+          'characters/teco_run.png',
+          SpriteAnimationData.sequenced(
+            amount: 8,
+            stepTime: 0.15,
+            textureSize: Vector2(128, 128),
+            texturePosition: Vector2(0, 0),
+          ),
+        ),
       );
 
   // --- Animações da Gaia ---
   static SimpleDirectionAnimation get _animacoesGaia => SimpleDirectionAnimation(
         enabledFlipX: true,
-        idleRight: SpriteAnimation.load(
+        idleDown: SpriteAnimation.load(
           'characters/gaia_idle.png',
           SpriteAnimationData.sequenced(
             amount: 8,
@@ -64,7 +82,25 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
             texturePosition: Vector2(0, 0),
           ),
         ),
+        runDown: SpriteAnimation.load(
+          'characters/gaia_run.png',
+          SpriteAnimationData.sequenced(
+            amount: 8,
+            stepTime: 0.15,
+            textureSize: Vector2(128, 128),
+            texturePosition: Vector2(0, 0),
+          ),
+        ),
         runRight: SpriteAnimation.load(
+          'characters/gaia_run.png',
+          SpriteAnimationData.sequenced(
+            amount: 8,
+            stepTime: 0.15,
+            textureSize: Vector2(128, 128),
+            texturePosition: Vector2(0, 0),
+          ),
+        ),
+        runLeft: SpriteAnimation.load(
           'characters/gaia_run.png',
           SpriteAnimationData.sequenced(
             amount: 8,
