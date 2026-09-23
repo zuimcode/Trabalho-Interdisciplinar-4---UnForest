@@ -19,7 +19,7 @@ class BiomasPage extends StatelessWidget {
       );
     } else if (biomaName == 'Praia') {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const LixoTaskPage()), // Assumindo LixoTaskPage para Praia
+        MaterialPageRoute(builder: (context) => const LixoTaskPage()),
       );
     } else if (biomaName == 'Gelo') {
       Navigator.of(context).push(

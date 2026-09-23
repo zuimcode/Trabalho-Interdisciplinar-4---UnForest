@@ -1,76 +1,116 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class ItemLixo {
-  final String id;
-  final String assetPath;
-  final double topRatio; // Proporção da altura da tela (0.0 a 1.0)
-  final double leftRatio; // Proporção da largura da tela (0.0 a 1.0)
-  final double sizeRatio; // Proporção do tamanho em relação à largura
-
-  ItemLixo({
-    required this.id,
-    required this.assetPath,
-    required this.topRatio,
-    required this.leftRatio,
-    this.sizeRatio = 0.15, // 15% da largura da tela por padrão
-  });
-}
-
-class LixoTaskPage extends StatefulWidget {
-  const LixoTaskPage({Key? key}) : super(key: key);
+class FlorestaPage extends StatefulWidget {
+  const FlorestaPage({super.key});
 
   @override
-  State<LixoTaskPage> createState() => _LixoTaskPageState();
+  State<FlorestaPage> createState() => _FlorestaPageState();
 }
 
-class _LixoTaskPageState extends State<LixoTaskPage> {
-  late List<ItemLixo> _lixosRestantes;
+class _FlorestaPageState extends State<FlorestaPage> {
+  // Controller do Audio Player para os sons de erro e sucesso
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
-  bool _gameIniciado = false; 
-  bool _taskConcluida = false; 
-  bool _lixeiraHighlight = false; // Para dar efeito visual na lixeira
+  // Estados do jogo
+  bool _showInstructions = true; // Exibe o overlay de instruções inicial
+  bool _taskCompleted = false;    // Marca se a task foi concluída
+  bool _showVictory = false;      // Exibe o overlay de vitória ao final
+
+  // Etapa atual do plantio:
+  // 0: buraco_terra (inicial)
+  // 1: terra_com_semente
+  // 2: terra_coberta
+  // 3: terra_molhada
+  // 4: terra_com_muda
+  // 5: arvore_task (árvore adulta)
+  int _plantStage = 0;
+
+  // Lista dos caminhos das imagens da evolução da planta no buraco
+  final List<String> _plantImages = [
+    'assets/images/task-floresta/buraco_terra_task_floresta.png',
+    'assets/images/task-floresta/terra_com_semente_task_floresta.png',
+    'assets/images/task-floresta/terra_coberta_task_floresta.png',
+    'assets/images/task-floresta/terra_molhada_task_floresta.png',
+    'assets/images/task-floresta/terra_com_muda_task_floresta.png',
+    'assets/images/task-floresta/arvore_task_floresta.png',
+  ];
 
   @override
-  void initState() {
-    super.initState();
-    _resetTask();
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
   }
 
-  void _resetTask() {
-    setState(() {
-      _gameIniciado = false;
-      _taskConcluida = false;
-      _lixeiraHighlight = false;
-      // Definindo posições com base em percentuais (proporções) da tela
-      _lixosRestantes = [
-        ItemLixo(id: 'lixo_1', assetPath: 'assets/images/task_praia/garrafa.png', topRatio: 0.20, leftRatio: 0.70, sizeRatio: 0.15),
-        ItemLixo(id: 'lixo_2', assetPath: 'assets/images/task_praia/lata.png', topRatio: 0.25, leftRatio: 0.85, sizeRatio: 0.15),
-        ItemLixo(id: 'lixo_3', assetPath: 'assets/images/task_praia/peixe.png', topRatio: 0.18, leftRatio: 0.50, sizeRatio: 0.15),
-        ItemLixo(id: 'lixo_4', assetPath: 'assets/images/task_praia/sacola.png', topRatio: 0.22, leftRatio: 0.30, sizeRatio: 0.15),
-        ItemLixo(id: 'lixo_5', assetPath: 'assets/images/task_praia/maca.png', topRatio: 0.20, leftRatio: 0.10, sizeRatio: 0.15),
-      ];
-    });
+  // Toca o som de erro
+  Future<void> _playErrorSound() async {
+    try {
+      await _audioPlayer.stop();
+      await _audioPlayer.play(AssetSource('audio/erro.mp3'));
+    } catch (_) {}
   }
 
-  void _onLixoColetado(ItemLixo lixo) {
-    setState(() {
-      _lixosRestantes.removeWhere((item) => item.id == lixo.id);
+  // Toca o som de tarefa concluída
+  Future<void> _playSuccessSound() async {
+    try {
+      await _audioPlayer.stop();
+      await _audioPlayer.play(AssetSource('audio/sucesso.mp3'));
+    } catch (_) {}
+  }
 
-      if (_lixosRestantes.isEmpty) {
-        _finalizarTask();
+  // Função para validar o item arrastado até o buraco
+  void _onItemDropped(String itemType) {
+    bool isCorrect = false;
+
+    if (_plantStage == 0 && itemType == 'semente') isCorrect = true;
+    if (_plantStage == 1 && itemType == 'terra') isCorrect = true;
+    if (_plantStage == 2 && itemType == 'regador') isCorrect = true;
+    if (_plantStage == 3 && itemType == 'muda') isCorrect = true;
+
+    if (isCorrect) {
+      setState(() {
+        _plantStage++;
+      });
+
+      if (_plantStage == 4) {
+        _finishPlantingSequence();
       }
-    });
+    } else {
+      _playErrorSound();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Sequência incorreta! Tente novamente.'),
+          duration: Duration(seconds: 1),
+          backgroundColor: Colors.redAccent,
+        ),
+      );
+    }
   }
 
-  void _finalizarTask() {
-    setState(() {
-      _taskConcluida = true;
+  // Sequência final de crescimento e conclusão da task
+  void _finishPlantingSequence() {
+    // Reduzido para 1 segundo de espera após a muda ser colocada
+    Future.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+      setState(() {
+        _plantStage = 5;
+        _taskCompleted = true;
+      });
+
+      _playSuccessSound();
+
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        if (!mounted) return;
+        setState(() {
+          _showVictory = true;
+        });
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // Obtendo as dimensões da tela atual via MediaQuery
+    // Obter dimensões da tela com MediaQuery
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
@@ -78,21 +118,17 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. Fundo Dinâmico com Transição Suave (AnimatedCrossFade)
+          // ==========================================
+          // 1. IMAGEM DE FUNDO (FLORESTA FEIA OU BONITA)
+          // ==========================================
           Positioned.fill(
-            child: AnimatedCrossFade(
-              duration: const Duration(milliseconds: 1200),
-              crossFadeState: _taskConcluida
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-              firstChild: Image.asset(
-                'assets/images/task_praia/praia_feia3.png',
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: double.infinity,
-              ),
-              secondChild: Image.asset(
-                'assets/images/task_praia/praia_bonita.png',
+            child: AnimatedSwitcher(
+              duration: const Duration(seconds: 2),
+              child: Image.asset(
+                _taskCompleted
+                    ? 'assets/images/task-floresta/floresta_bonita.JPG'
+                    : 'assets/images/task-floresta/floresta_feia.JPG',
+                key: ValueKey<bool>(_taskCompleted),
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
@@ -100,168 +136,186 @@ class _LixoTaskPageState extends State<LixoTaskPage> {
             ),
           ),
 
-          // 2. Elementos do Jogo
-          if (_gameIniciado && !_taskConcluida) ...[
-            // Contador / Indicador Topo Proporcional
-            Positioned(
-              top: screenHeight * 0.05,
-              left: screenWidth * 0.05,
+          // Layer de brilhos/partículas visuais ao concluir a task
+          if (_taskCompleted)
+            Positioned.fill(
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: screenWidth * 0.04,
-                  vertical: screenHeight * 0.01,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  'Lixos restantes: ${_lixosRestantes.length}',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: screenWidth * 0.045, // Tamanho de fonte responsivo
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                color: Colors.amber.withOpacity(0.15),
               ),
             ),
 
-            // A Lixeira (DragTarget) proporcional
-            Positioned(
-              bottom: screenHeight * 0.04,
-              right: screenWidth * 0.07,
-              child: DragTarget<ItemLixo>(
-                onWillAcceptWithDetails: (details) {
-                  setState(() => _lixeiraHighlight = true);
-                  return true;
-                },
-                onLeave: (_) {
-                  setState(() => _lixeiraHighlight = false);
-                },
-                onAcceptWithDetails: (details) {
-                  setState(() => _lixeiraHighlight = false);
-                  _onLixoColetado(details.data);
-                },
-                builder: (context, candidateData, rejectedData) {
-                  return AnimatedScale(
-                    scale: _lixeiraHighlight ? 1.15 : 1.0,
-                    duration: const Duration(milliseconds: 150),
-                    child: Image.asset(
-                      _lixeiraHighlight
-                          ? 'assets/images/task_praia/lixeira_aberta.png'
-                          : 'assets/images/task_praia/lixeira_fechada.png',
-                      width: screenWidth * 0.35, // Proporcional à largura da tela
-                      height: screenHeight * 0.35, // Proporcional à altura da tela
-                      fit: BoxFit.contain,
+          // Escurece o fundo enquanto as instruções estão ativas
+          if (_showInstructions)
+            Container(
+              color: Colors.black.withOpacity(0.6),
+            ),
+
+          // ==========================================
+          // 2. CONTEÚDO DA TASK (BURACO E ITENS)
+          // ==========================================
+          if (!_showInstructions && !_showVictory)
+            SafeArea(
+              child: Stack(
+                children: [
+                  // --- BURACO / PLANTA NO MEIO DA TELA (Colocado mais para baixo) ---
+                  Align(
+                    alignment: const Alignment(0.0, 0.65), // Ajustado de 0.4 para 0.65 para posicionar mais abaixo
+                    child: DragTarget<String>(
+                      onWillAcceptWithDetails: (details) => true,
+                      onAcceptWithDetails: (details) {
+                        _onItemDropped(details.data);
+                      },
+                      builder: (context, candidateData, rejectedData) {
+                        return AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 500),
+                          child: Image.asset(
+                            _plantImages[_plantStage],
+                            key: ValueKey<int>(_plantStage),
+                            height: _plantStage == 5
+                                ? screenHeight * 0.25
+                                : screenHeight * 0.15,
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
+                  ),
+
+                  // --- ITENS NAS LATERAIS PARA ARRASTAR ---
+                  // Lado Esquerdo: Regador e Semente
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: screenWidth * 0.08),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildDraggableItem(
+                            'semente',
+                            'assets/images/task-floresta/semente_task_floresta.png',
+                            screenHeight,
+                          ),
+                          SizedBox(height: screenHeight * 0.03),
+                          _buildDraggableItem(
+                            'regador',
+                            'assets/images/task-floresta/regador_task_floresta.png',
+                            screenHeight,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Lado Direito: Terra e Muda
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: screenWidth * 0.08),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildDraggableItem(
+                            'terra',
+                            'assets/images/task-floresta/terra_task_floresta.png',
+                            screenHeight,
+                          ),
+                          SizedBox(height: screenHeight * 0.03),
+                          _buildDraggableItem(
+                            'muda',
+                            'assets/images/task-floresta/muda_task_floresta.png',
+                            screenHeight,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
-            // Lixos Espalhados na Tela (Draggables) proporcionais
-            ..._lixosRestantes.map((lixo) {
-              final double calculatedSize = screenWidth * lixo.sizeRatio;
-              return Positioned(
-                top: screenHeight * lixo.topRatio,
-                left: screenWidth * lixo.leftRatio,
-                child: Draggable<ItemLixo>(
-                  data: lixo,
-                  feedback: Material(
-                    color: Colors.transparent,
+          // ==========================================
+          // 3. TELA DE INSTRUÇÕES
+          // ==========================================
+          if (_showInstructions)
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/task-floresta/instrucoes-floresta.png',
+                    height: screenHeight * 0.28,
+                  ),
+                  SizedBox(height: screenHeight * 0.025),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _showInstructions = false;
+                      });
+                    },
                     child: Image.asset(
-                      lixo.assetPath,
-                      width: calculatedSize * 1.2,
-                      height: calculatedSize * 1.2,
-                      fit: BoxFit.contain,
+                      'assets/images/buttons/botao_check.png',
+                      height: screenHeight * 0.09,
                     ),
                   ),
-                  childWhenDragging: Opacity(
-                    opacity: 0.3,
-                    child: Image.asset(
-                      lixo.assetPath,
-                      width: calculatedSize,
-                      height: calculatedSize,
-                      fit: BoxFit.contain,
+                ],
+              ),
+            ),
+
+          // ==========================================
+          // 4. OVERLAY DE VITÓRIA / TELA FINAL
+          // ==========================================
+          if (_showVictory)
+            Container(
+              color: Colors.black38,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/task-floresta/instrucoes-floresta.png',
+                      height: screenHeight * 0.23,
                     ),
-                  ),
-                  child: Image.asset(
-                    lixo.assetPath,
-                    width: calculatedSize,
-                    height: calculatedSize,
-                    fit: BoxFit.contain,
-                  ),
+                    SizedBox(height: screenHeight * 0.025),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Image.asset(
+                        'assets/images/buttons/botao_saida.png',
+                        height: screenHeight * 0.095,
+                      ),
+                    ),
+                  ],
                 ),
-              );
-            }).toList(),
-          ],
-
-          // 3. Overlay Inicial (Instruções do Jogo) Responsivo
-          if (!_gameIniciado) _buildIntroOverlay(screenWidth, screenHeight),
-
-          // 4. Overlay de Vitória (Final do Jogo) Responsivo
-          if (_taskConcluida) _buildVictoryOverlay(screenWidth, screenHeight),
+              ),
+            ),
         ],
       ),
     );
   }
 
-  // Widget da Tela de Instruções
-  Widget _buildIntroOverlay(double screenWidth, double screenHeight) {
-    return Container(
-      color: Colors.black.withOpacity(0.75),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/task_praia/balao_praia.png',
-              width: screenWidth * 0.85, // Ocupa 85% da largura da tela
-              fit: BoxFit.contain,
-            ),
-            SizedBox(height: screenHeight * 0.03),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  _gameIniciado = true;
-                });
-              },
-              child: Image.asset(
-                'assets/images/buttons/botao_check.png',
-                width: screenWidth * 0.35, // Proporcional à tela
-                fit: BoxFit.contain,
-              ),
-            ),
-          ],
+  Widget _buildDraggableItem(String itemType, String imagePath, double screenHeight) {
+    final itemHeight = screenHeight * 0.09;
+    final feedbackHeight = screenHeight * 0.10;
+
+    return Draggable<String>(
+      data: itemType,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Image.asset(
+          imagePath,
+          height: feedbackHeight,
         ),
       ),
-    );
-  }
-
-  // Widget da Tela de Vitória
-  Widget _buildVictoryOverlay(double screenWidth, double screenHeight) {
-    return Container(
-      color: Colors.black.withOpacity(0.6),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/task_praia/balao_task_concluida.png',
-              width: screenWidth * 0.85,
-              fit: BoxFit.contain,
-            ),
-            SizedBox(height: screenHeight * 0.03),
-            GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: Image.asset(
-                'assets/images/buttons/botao_saida.png',
-                width: screenWidth * 0.25,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ],
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: Image.asset(
+          imagePath,
+          height: itemHeight,
         ),
+      ),
+      child: Image.asset(
+        imagePath,
+        height: itemHeight,
       ),
     );
   }

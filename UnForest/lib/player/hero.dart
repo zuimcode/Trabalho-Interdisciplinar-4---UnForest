@@ -32,7 +32,7 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
   // --- Animações do Teco ---
   static SimpleDirectionAnimation get _animacoesTeco => SimpleDirectionAnimation(
         enabledFlipX: true,
-        idleDown: SpriteAnimation.load(
+        idleRight: SpriteAnimation.load(
           'characters/teco_idle.png',
           SpriteAnimationData.sequenced(
             amount: 8,
@@ -73,7 +73,7 @@ class Heroi extends SimplePlayer with BlockMovementCollision {
   // --- Animações da Gaia ---
   static SimpleDirectionAnimation get _animacoesGaia => SimpleDirectionAnimation(
         enabledFlipX: true,
-        idleDown: SpriteAnimation.load(
+        idleRight: SpriteAnimation.load(
           'characters/gaia_idle.png',
           SpriteAnimationData.sequenced(
             amount: 8,
