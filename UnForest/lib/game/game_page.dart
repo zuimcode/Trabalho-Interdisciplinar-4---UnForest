@@ -5,18 +5,13 @@ import 'package:UnForest/player/hero.dart';
 class GamePage extends StatelessWidget {
   final String selectedCharacter;
 
-  const GamePage({
-    super.key,
-    this.selectedCharacter = 'teco',
-  });
+  const GamePage({super.key, this.selectedCharacter = 'teco'});
 
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
       showCollisionArea: false,
-      map: WorldMapByTiled(
-        WorldMapReader.fromAsset('mapa_neve.json'),
-      ),
+      map: WorldMapByTiled(WorldMapReader.fromAsset('mapa_neve_feia.json')),
       playerControllers: [
         Joystick(directional: JoystickDirectional()),
         Keyboard(),
@@ -27,10 +22,7 @@ class GamePage extends StatelessWidget {
         nomePersonagem: selectedCharacter,
       ),
 
-      cameraConfig: CameraConfig(
-        moveOnlyMapArea: true,
-        zoom: 1.5,
-      ),
+      cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 1.5),
     );
   }
 }
