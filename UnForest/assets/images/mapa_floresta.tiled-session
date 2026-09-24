@@ -1,11 +1,12 @@
 {
-    "activeFile": "mapa_cidade.tmx",
+    "activeFile": "mapa_neve.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "#Areia": {
             "dynamicWrapping": false,
@@ -41,41 +42,77 @@
             "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 586,
-                "y": 711
+                "x": 284,
+                "y": 639
             }
         },
         "mapa_cidade.tmx#Atlas-Props-Sprites": {
-            "scaleInDock": 1
+            "dynamicWrapping": true,
+            "scaleInDock": 0.33
         },
         "mapa_cidade.tmx#Atlas-Props-sheet2-sprites": {
             "dynamicWrapping": false,
-            "scaleInDock": 1
+            "scaleInDock": 0.5
         },
         "mapa_cidade.tmx#Atlas-props-sprites": {
-            "scaleInDock": 1
+            "dynamicWrapping": true,
+            "scaleInDock": 0.125
         },
         "mapa_cidade.tmx#Premade_houses": {
-            "scaleInDock": 1
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5
         },
         "mapa_cidade.tmx#Tileset - Terrain - new grass2": {
-            "scaleInDock": 1
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5
         },
         "mapa_cidade.tmx#Tilesets-GL2SA": {
-            "scaleInDock": 1
+            "scaleInDock": 0.33
         },
         "mapa_cidade.tmx#props(as sprites)": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.33
+        },
+        "mapa_cidade_feia.tmx": {
+            "scale": 0.63234375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.4744255003706,
+                "y": 639.6837163330862
+            }
+        },
+        "mapa_cidade_feia.tmx#Atlas-Props-Sprites": {
+            "scaleInDock": 1
+        },
+        "mapa_cidade_feia.tmx#Atlas-Props-sheet2-sprites": {
+            "scaleInDock": 0.25
+        },
+        "mapa_cidade_feia.tmx#Atlas-props-sprites": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.125
+        },
+        "mapa_cidade_feia.tmx#Premade_houses": {
+            "scaleInDock": 1
+        },
+        "mapa_cidade_feia.tmx#Tileset - Terrain - new grass2": {
+            "scaleInDock": 1
+        },
+        "mapa_cidade_feia.tmx#Tilesets-GL2SA": {
+            "scaleInDock": 1
+        },
+        "mapa_cidade_feia.tmx#props(as sprites)": {
             "scaleInDock": 1
         },
         "mapa_deserto.tmx": {
             "scale": 0.5,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 564,
-                "y": 729
+                "x": 512,
+                "y": 639
             }
         },
         "mapa_deserto.tmx#Areia": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "mapa_deserto.tmx#Props_Deserto1": {
@@ -100,32 +137,89 @@
             "scaleInDock": 0.25,
             "scaleInEditor": 1
         },
-        "mapa_floresta.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 2,
+        "mapa_deserto_feio.tmx": {
+            "scale": 0.63234375,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 698,
-                "y": 699
+                "x": 923.5483073881887,
+                "y": 639.6837163330862
+            }
+        },
+        "mapa_deserto_feio.tmx#Areia": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "mapa_deserto_feio.tmx#Props_Deserto1": {
+            "scaleInDock": 1
+        },
+        "mapa_deserto_feio.tmx#deep sea": {
+            "scaleInDock": 1
+        },
+        "mapa_deserto_feio.tmx#props1": {
+            "scaleInDock": 1
+        },
+        "mapa_deserto_feio.tmx#props3": {
+            "scaleInDock": 1
+        },
+        "mapa_floresta.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 1020,
+                "y": 201.66666666666663
             }
         },
         "mapa_floresta.tmx#Atlas-Props-sheet1-sprites": {
+            "dynamicWrapping": true,
             "scaleInDock": 0.25
         },
         "mapa_floresta.tmx#Atlas-Props-sheet2-sprites": {
+            "dynamicWrapping": true,
             "scaleInDock": 0.25
         },
         "mapa_floresta.tmx#Terrain - Highlands": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "mapa_floresta.tmx#Tileset - Terrain - new grass2": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
-        "mapa_neve.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 5,
+        "mapa_floresta_feia.tmx": {
+            "scale": 0.63234375,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 666,
-                "y": 813
+                "x": 986.8050407709416,
+                "y": 731.4059797380776
+            }
+        },
+        "mapa_floresta_feia.tmx#Atlas-Props-sheet1-sprites": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "mapa_floresta_feia.tmx#Atlas-Props-sheet2-sprites": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.33
+        },
+        "mapa_floresta_feia.tmx#Terrain - Highlands": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5
+        },
+        "mapa_floresta_feia.tmx#Tileset - Terrain - new grass2": {
+            "scaleInDock": 0.75
+        },
+        "mapa_neve.tmx": {
+            "expandedObjectLayers": [
+                19
+            ],
+            "scale": 1.5,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 339.3333333333333,
+                "y": 864.9999999999999
             }
         },
         "mapa_neve.tmx#Atlas-Props-Sprites": {
@@ -140,6 +234,34 @@
             "scaleInDock": 1
         },
         "mapa_neve.tmx#Tileset - Terrain - new grass2": {
+            "scaleInDock": 1
+        },
+        "mapa_neve.tmx#portal-all animations-grass land2.0": {
+            "scaleInDock": 1.5
+        },
+        "mapa_neve.tmx#portal-anim3-to grass land20": {
+            "dynamicWrapping": false
+        },
+        "mapa_neve_feia.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 360,
+                "y": 567.3333333333333
+            }
+        },
+        "mapa_neve_feia.tmx#Atlas-Props-Sprites": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.25
+        },
+        "mapa_neve_feia.tmx#Guardiao_Neve": {
+            "dynamicWrapping": true
+        },
+        "mapa_neve_feia.tmx#Terrain - Highlands": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.33
+        },
+        "mapa_neve_feia.tmx#guardiao_neve": {
             "scaleInDock": 1
         },
         "mapa_praia.json[.tmx": {
@@ -172,7 +294,7 @@
             "scale": 0.63234375,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 640.4744255003706,
+                "x": 629.4044971583888,
                 "y": 639.6837163330862
             }
         },
@@ -190,6 +312,30 @@
             "scaleInDock": 1
         },
         "mapa_praia.tmx#platform - grass2 - coast - spritesheet": {
+            "scaleInDock": 1
+        },
+        "mapa_praia_feia.tmx": {
+            "scale": 0.63234375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.4744255003706,
+                "y": 639.6837163330862
+            }
+        },
+        "mapa_praia_feia.tmx#Atlas-props-sprites": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.25
+        },
+        "mapa_praia_feia.tmx#Props_praia": {
+            "scaleInDock": 1
+        },
+        "mapa_praia_feia.tmx#Tilesets-GL2SA": {
+            "scaleInDock": 1
+        },
+        "mapa_praia_feia.tmx#beach - with thick foam": {
+            "scaleInDock": 1
+        },
+        "mapa_praia_feia.tmx#platform - grass2 - coast - spritesheet": {
             "scaleInDock": 1
         },
         "sem título.tmx": {
@@ -231,8 +377,8 @@
             "scale": 0.25,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 1604,
-                "y": 1646
+                "x": 3192,
+                "y": 1834
             }
         },
         "teste_mapa.tmx#Areia": {
@@ -308,10 +454,22 @@
         "teste_mapa.tmx#props(as sprites)": {
             "dynamicWrapping": true,
             "scaleInDock": 1
+        },
+        "tiled/ERW-Ancient Ruins/TiledMap Editor/Tilesets/Atlas-Props-Sprites.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.0625
+        },
+        "tiled/ERW-Ancient Ruins/TiledMap Editor/Tilesets/Atlas-Props2.tsx": {
+            "scaleInDock": 0.25
+        },
+        "tiled/ERW-Ancient Ruins/TiledMap Editor/Tilesets/Terrain - Ancient Ruins.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         }
     },
     "last.exportedFilePath": "C:/Users/zoiai/OneDrive/Área de Trabalho/Faculdade/Trabalho-Interdisciplinar-4---UnForest/UnForest/assets/images",
-    "last.imagePath": "C:/Users/zoiai/OneDrive/Área de Trabalho/Faculdade/Trabalho-Interdisciplinar-4---UnForest/UnForest/assets/images/tiled/ERW - Desert/props/props-houses-sprites",
+    "last.externalTilesetPath": "C:/Users/zoiai/OneDrive/Área de Trabalho/Faculdade/Trabalho-Interdisciplinar-4---UnForest/UnForest/assets/images/tiled/ERW-Ancient Ruins/TiledMap Editor/Tilesets",
+    "last.imagePath": "C:/Users/zoiai/OneDrive/Área de Trabalho/Faculdade/Trabalho-Interdisciplinar-4---UnForest/UnForest/assets/images/tiled/ERW-Ancient Ruins/Props/animated",
     "map.height": 40,
     "map.lastUsedExportFilter": "Todos os Ficheiros (*)",
     "map.lastUsedFormat": "tmx",
@@ -319,17 +477,33 @@
     "map.width": 40,
     "openFiles": [
         "mapa_floresta.tmx",
+        "mapa_praia.tmx",
+        "mapa_neve.tmx",
+        "mapa_deserto.tmx",
         "mapa_cidade.tmx",
-        "teste_mapa.tmx"
+        "teste_mapa.tmx",
+        "mapa_cidade_feia.tmx",
+        "mapa_deserto_feio.tmx",
+        "mapa_floresta_feia.tmx",
+        "mapa_neve_feia.tmx",
+        "mapa_praia_feia.tmx"
     ],
     "project": "mapa_floresta.tiled-project",
     "recentFiles": [
-        "sem título.tmx",
-        "mapa_praia.json[.tmx",
         "mapa_floresta.tmx",
+        "mapa_praia.tmx",
+        "mapa_praia_feia.tmx",
+        "mapa_neve_feia.tmx",
+        "mapa_floresta_feia.tmx",
+        "mapa_deserto_feio.tmx",
+        "mapa_cidade_feia.tmx",
+        "teste_mapa.tmx",
         "mapa_cidade.tmx",
-        "teste_mapa.tmx"
+        "mapa_deserto.tmx",
+        "mapa_neve.tmx",
+        "sem título.tmx"
     ],
     "tileset.embedInMap": true,
-    "tileset.type": 1
+    "tileset.lastUsedFilter": "Ficheiros de conjunto de tiles Tiled (*.tsx *.xml)",
+    "tileset.type": 0
 }

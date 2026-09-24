@@ -1,0 +1,54 @@
+---- Important notes ----
+-Unity's Rule tile system alternative
+Since Unity's default rule tile system is somehow limited and does not cover some aspects of autotiling out of the box, tilesets with multiple heights(e.g walls
+with 2 or more tiles of height) have no rule tile setup. Also, whilst animated tilesets are setup and ready to use, no tile variation is set. 
+To sum up, 90% of all tilesets are setup and ready to use.
+
+-TiledMap Editor alternative
+All tilesets have full autotile support and this is as easy as selecting a brush for a specific tileset and start drawing. 
+The rules are setup to be used with the "Automapping while drawing" deactivaded, so all you have to do is draw and, once you
+have finished, press CTRL + M or CMD + M(This is called automapping, which is the autotile version of Tiled). If you are drawing
+actual terrains(tilesets with no height), then in this case you just have to draw and no further action is needed. In this case
+you'd only use the built-in autotile(terrain brush(T))
+
+TiledMap Editor is a great and well known 2D map editor. You can create maps for your game and import it 
+to Unity using SuperTiled2Unity importer. A sample scene is provided.
+
+Hint: after importing your map to Unity, if you find some errors, especially regarding the max size of
+the tileset, try restarting Unity after fixing these issues. It might be fixed already but the error sometimes only dissapears after restarting.
+
+*My tilesets' smallest area is a 2x2 grid.
+
+links: 
+Tiled offical site: https://www.mapeditor.org/ 
+Tiled official Discord: https://discord.com/invite/39wbTv7
+SuperTiled2Unity: https://seanba.itch.io/supertiled2unity (this should be imported as a Unity package)
+
+----------------------------------------
+
+Notes/tips
+>There are tilesets which transitions to transparency too but since this asset is quite big, I didn't configured the transparency version in Unity to
+avoid too much pollution due to diplicated stuff. If you prefer this version, you can replace the already configured tilesets by the transparent one
+which shares the same tile index. The transparent version can be found at Tilesets\Transparency version
+> tilesets with grass1 and 2 can be mixed to use both styles. It works the same compared to the grass terrain,
+provided in the file 'Tileset - Terrain'. The idea is to mix them in order to have an even more organic look.
+> The same idea is applied to every tileset with grass, like 'flooded grass', etc
+
+> platform - flooded ground tilesets - The water has 58% opacity and It's meant to be used with some ground bellow the water
+Works best when used with grassy stone ground, but you can test it out some other options.
+
+>The color variation can be used to keep contrast between the elements(props). As you already noticed, the art style for this pack - and for the
+entire series - does not include hard outlines everywhere, so use this constrast to give you depth for the environment. 
+Examples of its use can be found in the mockups 
+
+>The darker and extra darker grass are meant to be used only as specific shading but feel free to use it as you wish. Examples of its
+use can be found in the mockups
+
+>Stone ground is mainly used to be blended with grass (transitioning to grass). The main ground is grass 
+that transitions between different grasses and almost everything is designed to be place on it.
+
+-STAIRS
+They connect with the correspondent tiles( snapping ). 
+>In order to use the diagonal stairs with transparency correctly you must remove the platform's corner tile bellow.
+>Horizontal stairs inner tile is tileable, having the possibility to create a more wide stairs.
+>Generally It's recommended that you place stairs in a layer above it to avoid missing tiles since stairs have predefined snapping positions

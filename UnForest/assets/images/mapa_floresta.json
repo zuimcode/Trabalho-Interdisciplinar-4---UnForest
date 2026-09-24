@@ -409,9 +409,38 @@
          "width":40,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":9,
+         "name":"portal",
+         "objects":[
+                {
+                 "height":192,
+                 "id":3,
+                 "name":"portal",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"targetMap",
+                         "type":"string",
+                         "value":"mapa_neve.json"
+                        }],
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":290,
+                 "x":891.333333333,
+                 "y":38
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":1,
+ "nextlayerid":10,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"left-down",
  "tiledversion":"1.12.2",

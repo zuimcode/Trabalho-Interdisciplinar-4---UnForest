@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="1">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="4">
+ <editorsettings>
+  <export target="mapa_floresta.json" format="json"/>
+ </editorsettings>
  <tileset firstgid="1" name="Terrain - Highlands" tilewidth="32" tileheight="32" tilecount="2964" columns="57">
   <image source="tiled/ERW - Highlands/tilesets and props/tilesets.png" width="1824" height="1664"/>
   <tile id="139" probability="3"/>
@@ -5201,4 +5204,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="9" name="portal">
+  <object id="3" name="portal" type="portal" x="891.333" y="38" width="290" height="192">
+   <properties>
+    <property name="targetMap" value="mapa_neve.json"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
