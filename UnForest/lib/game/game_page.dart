@@ -10,7 +10,7 @@ class GamePage extends StatelessWidget {
   GamePage({
     Key? key,
     this.selectedCharacter = 'teco',
-    this.mapName = 'mapa_floresta.json',
+    this.mapName = 'mapa_neve.json',
   }) : super(key: key ?? ValueKey(mapName));
 
   @override
